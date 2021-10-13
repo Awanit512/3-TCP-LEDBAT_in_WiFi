@@ -9,6 +9,20 @@ LEDBAT in WiFi environments, including Gigabit WiFi, with and without Rate Adapt
 **Bonus experience**: Fundamentals of TCP LEDBAT and ns-3
 **Difficulty**: Moderate
 **Recommended Reading**:
-● LEDBAT: RFC 6817 (https://tools.ietf.org/html/rfc6817)
-● Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three
-Layers (http://ieeexplore.ieee.org/document/6814737/)
+<table>
+ <th>
+  <td>Description<td>
+  <td>Link</td>
+</th>
+
+<tr>
+  <td>EDBAT: RFC 6817<td>
+  <td>(https://tools.ietf.org/html/rfc6817)</td>
+</tr>
+  
+<tr>
+  <td>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers</td>
+  <td>(http://ieeexplore.ieee.org/document/6814737/)</td>
+</tr>
+
+</table>
