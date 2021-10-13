@@ -16,7 +16,7 @@ LEDBAT in WiFi environments, including Gigabit WiFi, with and without Rate Adapt
 </th>
 
 <tr>
-  <td>EDBAT: RFC 6817<td>
+  <td>EDBAT: RFC 6817</td>
   <td>(https://tools.ietf.org/html/rfc6817)</td>
 </tr>
   
