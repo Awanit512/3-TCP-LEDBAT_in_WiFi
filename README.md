@@ -12,7 +12,7 @@ LEDBAT in WiFi environments, including Gigabit WiFi, with and without Rate Adapt
 <table>
  <thead>
   <tr>
-   <td>Description<td>
+   <td>Description</td>
    <td>Link</td>
  </tr>
 <t/head>
