@@ -10,6 +10,14 @@
  LEDBAT in WiFi environments, including Gigabit WiFi, with and without Rate Adaptation.
   </td>
 </tr>
+  <tr>
+  <td><b>Contributors:</b></td>
+  <td>
+   Awanit Ranjan (([181CO161](https://github.com/Awanit512)) <br />
+   Keerti Chaudhary (([181CO226](https://github.com/keerti2001)) <br />
+   Yerramaddu Jahnavi (([181CO260](https://github.com/janubangalore))
+  </td>
+</tr>
 <tr><td><b>Required experience</b>:</td> <td> C and C++</td></tr>
 <tr><td><b>Bonus experience</b>: </td> <td> Fundamentals of TCP LEDBAT and ns-3</td></tr>
 <tr><td><b>Difficulty</b>: </td> <td> Moderate</td></tr>
