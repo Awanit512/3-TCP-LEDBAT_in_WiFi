@@ -47,8 +47,8 @@
   <table>
    <thead>
     <tr>
-     <td>Sender/Receiver side operation</td>
-     <td>Pseudocode</td>
+     <td>Sender side and Receiver side operations</td>
+     <td>Pseudocode / Mechanisms</td>
    </tr>
   <t/head>
   <tbody>
