@@ -42,7 +42,7 @@
    
    <tr>
  
- <td><b>Algoritm</b>:</td>
+ <td><b>LEDBAT Operations</b>:</td>
  <td> 
   <table>
    <thead>
