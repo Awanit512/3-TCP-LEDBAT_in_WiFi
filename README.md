@@ -20,8 +20,8 @@
   <table>
    <thead>
     <tr>
-     <td>Description</td>
-     <td>Link</td>
+     <td><b>Description</b></td>
+      <td><b>Link</b></td>
    </tr>
   <t/head>
   <tbody>
@@ -47,8 +47,8 @@
   <table>
    <thead>
     <tr>
-     <td>Sender side and Receiver side operations</td>
-     <td>Pseudocode / Mechanisms</td>
+      <td><b>Sender side and Receiver side operations</b></td>
+      <td><b>Pseudocode / Mechanisms</b></td>
    </tr>
   <t/head>
   <tbody>
