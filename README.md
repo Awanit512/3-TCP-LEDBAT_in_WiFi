@@ -7,7 +7,7 @@
    Low Extra Delay Background Transport (LEDBAT) is Less than Best Effort (LBE) type of
  transport. BitTorrent and Apple Inc use variants of LEDBAT as their default transport
  mechanisms for large-sized file transfers. This project aims to evaluate the performance of
- LEDBAT in WiFi environments,including Gigabit WiFi,with and without Rate Adaptation.
+ LEDBAT in WiFi environments, including Gigabit WiFi, with and without Rate Adaptation.
   </td>
 </tr>
   <tr>
@@ -20,9 +20,7 @@
 
   </td>
 </tr>
-<tr><td><b>Required experience</b>:</td> <td> C and C++</td></tr>
-<tr><td><b>Bonus experience</b>: </td> <td> Fundamentals of TCP LEDBAT and ns-3</td></tr>
-<tr><td><b>Difficulty</b>: </td> <td> Moderate</td></tr>
+
 <tr>
  
  <td><b>Recommended Reading</b>:</td>
