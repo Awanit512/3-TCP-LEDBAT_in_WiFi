@@ -34,10 +34,11 @@
      <td><b>Description</b></td>
       <td><b>Link</b></td>
    </tr>
-  <t/head>
+  </thead>
   <tbody>
+    
    <tr>
-     <td>EDBAT: RFC 6817</td>
+     <td>LEDBAT: RFC 6817</td>
      <td>https://tools.ietf.org/html/rfc6817</td>
    </tr>
 
@@ -45,11 +46,8 @@
      <td>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers</td>
      <td>http://ieeexplore.ieee.org/document/6814737/</td> 
     </tr>
-    
-    <tr>
-     <td>Performance Evaluation of a Python Implementation of the New LEDBAT Congestion Control Algorithm.</td>
-     <td>https://ieeexplore.ieee.org/document/5520827</td>
-   </tr>
+
+
 
   </tbody>
   </table>
