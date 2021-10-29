@@ -45,15 +45,19 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 ## Exhaustive Evaluation Examples ( Topology Design ) 
 
 <ol>
-  <li>  Simple p2p wireless network Tolpology </li>
-  <li>
- 
+  <li>  Simple p2p wireless network Tolpology <br />
+   <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-p2p.drawio.png"> <br />
+  </li>
+  
+  <li> Flexible Dumbell Topology <br />
+ <img src="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/flexible-dumpbell.png"> <br />
+  </li>
+    
+  <li> Simple  Dumbell Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-dumpbell.png"><br />
+  </li>
 
-
-  <\li>
- 
-
-
+   <li>  Triangular Mesh Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
+  </li>
     
  </ol>
 
