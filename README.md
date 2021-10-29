@@ -48,6 +48,16 @@
     </tr>
 
 
+   <tr>
+     <td>Exploration and evaluation of traditional TCP congestion control techniques</td>
+     <td>https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques</td> 
+    </tr>
+    
+    
+   <tr>
+     <td> Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm </td>
+     <td> https://ieeexplore.ieee.org/document/5520827 </td> 
+    </tr>
 
   </tbody>
   </table>
