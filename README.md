@@ -85,7 +85,7 @@
       <td><b>Sender side and Receiver side operations</b></td>
       <td><b>Pseudocode / Mechanisms</b></td>
    </tr>
-  <t/head>
+  </thead>
   <tbody>
    <tr>
      <td>Receiver side </td>
