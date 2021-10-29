@@ -1,6 +1,7 @@
 
 <h1><i>#3</i> Exhaustive evaluation of TCP LEDBAT in WiFi environments.</h1>
-<h3>Planing & Design Description Doc can be found here : <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evualation/plannng_and%20_design_readme.md"> plannng_and_design_readme.md </a> <h3>
+<h3>Planing & Design Description Doc can be found here : <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evualation/plannng_and%20_design_readme.md"> plannng_and_design_readme.md </a> </h3>
+
 <table>
 <tr>
   <td><b>Brief:</b></td>
@@ -14,10 +15,13 @@
   <tr>
   <td><b>Contributors:</b></td>
   <td>
-   
-   Awanit Ranjan ([181CO161](https://github.com/Awanit512)) <br />
-   Keerti Chaudhary ([181CO226](https://github.com/keerti2001)) <br />
-   Yerramaddu Jahnavi ([181CO260](https://github.com/janubangalore))
+   <b>Mentee</b> <br />
+   Awanit Ranjan ([181CO161](https://github.com/Awanit512)) [Mentee]<br />
+   Keerti Chaudhary ([181CO226](https://github.com/keerti2001)) [Mentee] <br />
+   Yerramaddu Jahnavi ([181CO260](https://github.com/janubangalore)) [Mentee] <br />
+   <br />
+   <b>Mentor</b> <br/>
+   Mohit P. Tahiliani ([Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](https://gitlab.com/mohittahiliani))
 
   </td>
 </tr>
@@ -32,17 +36,39 @@
      <td><b>Description</b></td>
       <td><b>Link</b></td>
    </tr>
-  <t/head>
+  </thead>
   <tbody>
+    
    <tr>
-     <td>EDBAT: RFC 6817</td>
+     <td>LEDBAT: RFC 6817</td>
      <td>https://tools.ietf.org/html/rfc6817</td>
    </tr>
 
    <tr>
      <td>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers</td>
-     <td>http://ieeexplore.ieee.org/document/6814737/</td>
+     <td>http://ieeexplore.ieee.org/document/6814737/</td> 
     </tr>
+
+
+   <tr>
+     <td>Exploration and evaluation of traditional TCP congestion control techniques</td>
+     <td>https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques</td> 
+    </tr>
+    
+    
+   <tr>
+     <td> Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm </td>
+     <td> https://ieeexplore.ieee.org/document/5520827 </td> 
+    </tr>
+    
+        
+   <tr>
+     <td>  Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 </td>
+     <td> https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval </td> 
+    </tr>
+    
+    
+   
   </tbody>
   </table>
 </td>
@@ -130,6 +156,10 @@ base_delay()
    
   
 </table>
+
+   
+  
+
 
    
   
