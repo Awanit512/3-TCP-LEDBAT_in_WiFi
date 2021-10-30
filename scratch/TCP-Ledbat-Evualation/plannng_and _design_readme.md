@@ -40,31 +40,42 @@ For Running on default argmumnets just type following:
 
     ./waf --run  <ledbat-evaluation-filename> 
     
-Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for ifferent command line argumnets example for different rate adaption algoithms..
-
+Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for ifferent command line argumnets example for different rate adaption algoithms.
+ 
 ## Exhaustive Evaluation Examples ( Topology Design ) :
 <br />
 
 <ol>
   <li>  Simple pRp wireless network Tolpology <br />
    <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-pRp.drawio.png"> <br />
+   <p> This is an simple node(STA) AP node(STA) Topology. The STA will be configured to have a mobility model helping simulator to calcuate received signal.
+     </p>
+    <br />
   </li>
+      
+  <li> Simple  Dumbell Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-dumpbell.png"> <br />
+    <p>This is a Simple Dumbell Topology having 3 STA connected to a AP0 and another 3 STA connected to another AP1 producing a Two BSS interaction example. 
+    </p>
+    <br />
+  </li>
+  
   
   <li> Flexible Dumbell Topology <br />
  <img src="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/flexible-dumpbell.png"> <br />
-  </li>
-    
-  <li> Simple  Dumbell Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-dumpbell.png"><br />
+     <p>
+       This is a Flexible Dumbell Topology, the main difference between simple dumbell and fexible number is justified by its name only i.e here we will take user driven command line arguments (though by default the topology hold its inheritence as that of simple dumbell i.e 3 STA connected to a AP0 and another 3 STA connected to another AP1 ), thus usrs can simulate for this topology by passing the number of nodes for BSS0 (AP0) AND BSS1 (AP1) thus producing a two BSS interaction example. 
+  </p>
+    <br />
   </li>
 
-   <li>  Triangular Mesh Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
-  </li>
-   <li> Star Topology <br /> 
+
+   <li> Star Topology <br />
+     <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/star topology.png"> <br />
        <p>
-         In this example we will try to consider a star topology  forming a BSS i.e at center we will be having AP and outside nodes as STA.   We will use a mobility mdoel as required by simulato for calculating received channel. 
+         In this example we will try to consider a star topology  forming a BSS i.e at center we will be having AP and outside nodes as STA. We will use a mobility model as required by simulator for calculating received signal. 
      </p>
      <br />
-     <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/star topology.png"> <br />
+     
   </li>
   
   
@@ -72,10 +83,19 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   <li>
   WiFi and Ethernet Combination Topology <br />
     <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/Combination Topology.png">  <br />
-    <p>In this example we will combine Ethernet network connected to a WiFi AP that in turn connected to WiFi nodes thus wifi network forming a BSS. The set of  Ethernet nodes will be on single CsmaChannel, thus in same broadcast domain. One of these (Ethernet) nodes has a PointToPointNetDevice for a connection to the WiFi AP of  WiFi network, so the AP also has a PointToPointNetDevice as well. The WiFi nodes (STA) will have WifiNetDevice attached to each of them. Again, all STA will share a single Channel object, YansWifiChannel. We will also consider  various mobility model for STA because as we know STA are mobile in nature and besides simulator needs coordinate/distance to calculate the received signal.</p>
+    <p>
+      In this example we will combine Ethernet network connected to a WiFi AP that in turn connected to WiFi nodes thus wifi network forming a BSS. The set of  Ethernet nodes will be on single CsmaChannel, thus in same broadcast domain. One of these (Ethernet) nodes has a PointToPointNetDevice for a connection to the WiFi AP of  WiFi network, so the AP also has a PointToPointNetDevice as well. The WiFi nodes (STA) will have WifiNetDevice attached to each of them. Again, all STA will share a single Channel object, YansWifiChannel. We will also consider  various mobility model for STA because as we know STA are mobile in nature and besides simulator needs coordinate/distance to calculate the received signal.
+    </p>
     <br />
   </li>
+  
+   <li>  Triangular Mesh Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
+     <p>This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implemntor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology.
+       </p>
+     <br />
+  </li>
  </ol>
+
 
 
 ## Timelines :
