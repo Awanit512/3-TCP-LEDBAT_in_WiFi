@@ -71,7 +71,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   
   <li>
   WiFi and Ethernet Combination Topology <br />
-    <img src =" ------------------------------------- ">  <br />
+    <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/Combination Topology.png">  <br />
     <p>In this example we will combine Ethernet network connected to a WiFi AP that in turn connected to WiFi nodes thus wifi network forming a BSS. The set of  Ethernet nodes will be on single CsmaChannel, thus in same broadcast domain. One of these (Ethernet) nodes has a PointToPointNetDevice for a connection to the WiFi AP of  WiFi network, so the AP also has a PointToPointNetDevice as well. The WiFi nodes (STA) will have WifiNetDevice attached to each of them. Again, all STA will share a single Channel object, YansWifiChannel. We will also consider  various mobility model for STA because as we know STA are mobile in nature and besides simulator needs coordinate/distance to calculate the received signal.</p>
     <br />
   </li>
