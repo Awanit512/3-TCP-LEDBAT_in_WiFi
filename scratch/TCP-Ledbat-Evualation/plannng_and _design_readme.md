@@ -138,5 +138,6 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   <li>Exploration and evaluation of traditional TCP congestion control techniques (https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques) </li>
   <li>Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm (https://ieeexplore.ieee.org/document/5520827) </li>
   <li>Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 (https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval)</li>
+  <li>Wi-Fi architecture in ns-3: (https://www.nsnam.org/docs/models/html/wifi-design.html)</li>
 </ol>
 
