@@ -111,8 +111,8 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
               <ul>
                 <li> Revising ns3 documentation.</li>
                 <li> Reading helper classes. </li>
-                <li> Understanding code base for WiFi module. </li>
-                <li> Implmentation of net devices app.</li>
+                <li> Understanding code-base for WiFi module a listed in Refrences. </li>
+                <li> Implmentation will be Initiated.</li>
               </ul>
           </td>
         </tr>
@@ -121,7 +121,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
            <td>
               <ul>
                 <li> Starting to work with simple P2P. </li>
-                <li> Analyze performance using throughput and generating graphs. </li>
+                <li> Analyze performance measuring throughput and generating graphs. </li>
               </ul>
           </td>
         </tr>
@@ -129,7 +129,8 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
             <td>Week 3</td>
            <td>
               <ul>
-                <li> Implementing the mentioned topologies. </li>
+                <li> Implementing the rest mentioned topologies.</li>
+                <li> Followed by analyzing the performance of TCP Ldbat for different Rate Adaption Algorithms and generating plots. </li>
               </ul>
           </td>
         </tr>
@@ -137,7 +138,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
             <td>Week 4</td>
            <td>
               <ul>
-                <li> Working on Documentation. </li>
+                <li> Working on Documentation of all those topologies stating the configuration done. </li>
               </ul>
           </td>
         </tr>
