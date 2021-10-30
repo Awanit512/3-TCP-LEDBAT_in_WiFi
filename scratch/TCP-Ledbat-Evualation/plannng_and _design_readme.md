@@ -120,7 +120,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
             <td>Week 2</td>
            <td>
               <ul>
-                <li> Starting to work with simple P2P. </li>
+                <li> Starting to work with simple P-R-P, Simple dumbell and Star. </li>
                 <li> Analyze performance measuring throughput and generating graphs. </li>
               </ul>
           </td>
