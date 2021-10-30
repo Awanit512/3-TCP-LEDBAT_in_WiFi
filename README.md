@@ -15,13 +15,15 @@
   <tr>
   <td><b>Contributors:</b></td>
   <td>
-   <b>Mentee</b> <br />
-   Awanit Ranjan ([181CO161](https://github.com/Awanit512)) [Mentee]<br />
-   Keerti Chaudhary ([181CO226](https://github.com/keerti2001)) [Mentee] <br />
-   Yerramaddu Jahnavi ([181CO260](https://github.com/janubangalore)) [Mentee] <br />
-   <br />
    <b>Mentor</b> <br/>
-   Mohit P. Tahiliani ([Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](https://gitlab.com/mohittahiliani))
+   Mohit P. Tahiliani [Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](<a href="https://gitlab.com/mohittahiliani"> Github Repo </a>)
+     <br />
+   <b>Mentee</b> <br />
+  
+   Awanit Ranjan      [181CO161] (<a href="https://github.com/Awanit512"> Github Repo </a>)     <br />
+   Keerti Chaudhary   [181CO226] (<a href="https://github.com/keerti2001"> Github Repo </a>)    <br />
+   Yerramaddu Jahnavi [181CO260] (<a href="https://github.com/janubangalore"> Github Repo </a>) <br />
+   
 
   </td>
 </tr>
@@ -41,32 +43,32 @@
     
    <tr>
      <td>LEDBAT: RFC 6817</td>
-     <td>https://tools.ietf.org/html/rfc6817</td>
+     <td> <a href="https://tools.ietf.org/html/rfc6817"> Link </a></td>
    </tr>
 
    <tr>
      <td>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers</td>
-     <td>http://ieeexplore.ieee.org/document/6814737/</td> 
+     <td> <a href="http://ieeexplore.ieee.org/document/6814737/"> Link </a></td> 
     </tr>
 
 
    <tr>
      <td>Exploration and evaluation of traditional TCP congestion control techniques</td>
-     <td>https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques</td> 
+     <td> <a href="https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques"> Link </a></td> 
     </tr>
     
     
    <tr>
      <td> Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm </td>
-     <td> https://ieeexplore.ieee.org/document/5520827 </td> 
+     <td> <a href="https://ieeexplore.ieee.org/document/5520827"> Link </a> </td> 
     </tr>
     
         
    <tr>
      <td>  Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 </td>
-     <td> https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval </td> 
+     <td> <a href="https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval"> Link </a> </td> 
     </tr>
-
+    
     
    
   </tbody>
