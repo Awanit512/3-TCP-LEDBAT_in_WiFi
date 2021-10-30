@@ -67,3 +67,11 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 
 ## References
 
+<ol>
+  <li>LEDBAT: RFC 6817</li>
+  <li>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers </li>
+  <li>Exploration and evaluation of traditional TCP congestion control techniques</li>
+  <li>Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm</li>
+  <li>Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01</li>
+</ol>
+
