@@ -15,13 +15,13 @@
   <tr>
   <td><b>Contributors:</b></td>
   <td>
+   <b>Mentor</b> <br/>
+   Mohit P. Tahiliani ([Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](https://gitlab.com/mohittahiliani))
+     <br />
    <b>Mentee</b> <br />
    Awanit Ranjan ([181CO161](https://github.com/Awanit512)) [Mentee]<br />
    Keerti Chaudhary ([181CO226](https://github.com/keerti2001)) [Mentee] <br />
    Yerramaddu Jahnavi ([181CO260](https://github.com/janubangalore)) [Mentee] <br />
-   <br />
-   <b>Mentor</b> <br/>
-   Mohit P. Tahiliani ([Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](https://gitlab.com/mohittahiliani))
 
   </td>
 </tr>
