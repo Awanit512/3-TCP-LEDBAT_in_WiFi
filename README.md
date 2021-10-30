@@ -66,16 +66,7 @@
      <td>  Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 </td>
      <td> https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval </td> 
     </tr>
-    
-     <tr>
-     <td>WiFi architecture in ns-3 </td>
-     <td>https://www.nsnam.org/docs/models/html/wifi-design.html </td> 
-    </tr>
-    
-    <tr>
-     <td>User documentation for Wi-Fi simulations using ns-3</td>
-     <td>https://www.nsnam.org/docs/models/html/wifi-user.html</td> 
-    </tr>
+   
     
    
   </tbody>
