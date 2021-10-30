@@ -42,7 +42,7 @@ For Running on default argmumnets just type following:
     
 Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for ifferent command line argumnets example for different rate adaption algoithms..
 
-## Exhaustive Evaluation Examples ( Topology Design ) 
+## Exhaustive Evaluation Examples ( Topology Design ) :
 
 <ol>
   <li>  Simple p2p wireless network Tolpology <br />
@@ -61,7 +61,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
  </ol>
 
 
-## Timelines ..
+## Timelines :
 
   <table>
     <thead>
@@ -112,7 +112,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 
 
 
-## References
+## References :
 
 <ol>
   <li>LEDBAT: RFC 6817 (https://tools.ietf.org/html/rfc6817)</li>
