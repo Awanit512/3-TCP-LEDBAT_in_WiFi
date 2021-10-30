@@ -69,6 +69,10 @@
      <td> <a href="https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval"> Link </a> </td> 
     </tr>
     
+  <tr>
+     <td>  WiFi architecture in ns-3 </td>
+     <td> <a href="https://www.nsnam.org/docs/models/html/wifi-design.html"> Link </a> </td> 
+    </tr>
     
    
   </tbody>
