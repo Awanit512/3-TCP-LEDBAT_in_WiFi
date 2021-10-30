@@ -16,7 +16,7 @@
   <td><b>Contributors:</b></td>
   <td>
    <b>Mentor</b> <br/>
-   Mohit P. Tahiliani ([Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](<a href="https://gitlab.com/mohittahiliani"> Github Repo </a>))
+   Mohit P. Tahiliani [Assistant Prof in the Dept. CSE NITK Surathkal, Mangalore, India](<a href="https://gitlab.com/mohittahiliani"> Github Repo </a>)
      <br />
    <b>Mentee</b> <br />
   
