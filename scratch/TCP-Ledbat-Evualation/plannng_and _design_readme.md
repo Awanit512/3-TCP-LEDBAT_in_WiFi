@@ -43,10 +43,11 @@ For Running on default argmumnets just type following:
 Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for ifferent command line argumnets example for different rate adaption algoithms..
 
 ## Exhaustive Evaluation Examples ( Topology Design ) :
+<br />
 
 <ol>
-  <li>  Simple p2p wireless network Tolpology <br />
-   <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-p2p.drawio.png"> <br />
+  <li>  Simple pRp wireless network Tolpology <br />
+   <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-pRp.drawio.png"> <br />
   </li>
   
   <li> Flexible Dumbell Topology <br />
@@ -58,12 +59,27 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 
    <li>  Triangular Mesh Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
   </li>
-   <li> Star Topology <br /> <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/star topology.png"> <br />
-  </li
+   <li> Star Topology <br /> 
+       <p>
+         In this example we will try to consider a star topology  forming a BSS i.e at center we will be having AP and outside nodes as STA.   We will use a mobility mdoel as required by simulato for calculating received channel. 
+     </p>
+     <br />
+     <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/star topology.png"> <br />
+  </li>
+  
+  
+  
+  <li>
+  WiFi and Ethernet Combination Topology <br />
+    <img src =" ------------------------------------- ">  <br />
+    <p>In this example we will combine Ethernet network connected to a WiFi AP that in turn connected to WiFi nodes thus wifi network forming a BSS. The set of  Ethernet nodes will be on single CsmaChannel, thus in same broadcast domain. One of these (Ethernet) nodes has a PointToPointNetDevice for a connection to the WiFi AP of  WiFi network, so the AP also has a PointToPointNetDevice as well. The WiFi nodes (STA) will have WifiNetDevice attached to each of them. Again, all STA will share a single Channel object, YansWifiChannel. We will also consider  various mobility model for STA because as we know STA are mobile in nature and besides simulator needs coordinate/distance to calculate the received signal.</p>
+    <br />
+  </li>
  </ol>
 
 
 ## Timelines :
+<br />
 
   <table>
     <thead>
@@ -112,7 +128,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
     </tbody>
   </table>
 
-
+<br />
 
 ## References :
 
