@@ -48,13 +48,13 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 <ol>
   <li>  Simple pRp wireless network Tolpology <br />
    <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-pRp.drawio.png"> <br />
-   <p> This is an simple node(STA) AP node(STA) Topology. The STA will be configured to have a mobility model helping simulator to calcuate received signal.
+   <p> This is an simple node(STA)-AP-node(STA) Topology. The STAs will be configured to have a mobility model helping simulator to calcuate received signal.
      </p>
     <br />
   </li>
       
   <li> Simple  Dumbell Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-dumpbell.png"> <br />
-    <p>This is a Simple Dumbell Topology having 3 STA connected to a AP0 and another 3 STA connected to another AP1 producing a Two BSS interaction example. 
+    <p>This is a Simple Dumbell Topology having 3 STA connected to a AP0 and another 3 STAs connected to another AP1 producing a Two BSS interaction example. 
     </p>
     <br />
   </li>
@@ -63,11 +63,10 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   <li> Flexible Dumbell Topology <br />
  <img src="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/flexible-dumpbell.png"> <br />
      <p>
-       This is a Flexible Dumbell Topology, the main difference between simple dumbell and fexible number is justified by its name only i.e here we will take user driven command line arguments (though by default the topology hold its inheritence as that of simple dumbell i.e 3 STA connected to a AP0 and another 3 STA connected to another AP1 ), thus usrs can simulate for this topology by passing the number of nodes for BSS0 (AP0) AND BSS1 (AP1) thus producing a two BSS interaction example. 
+       This is a Flexible Dumbell Topology, the main difference between Simple dumbell and Flexible  is justified by its name only i.e in formr the topology is fixed type while in latter we will take user's command line arguments (by default the topology hold its inheritence as that of simple dumbell i.e 3 STA connected to a AP0 and another 3 STAs connected to another AP1 ), thus users can simulate for the topology by passing the number of nodes for BSS0 (AP0) AND BSS1 (AP1) thus producing a two BSS interaction example. 
   </p>
     <br />
   </li>
-
 
    <li> Star Topology <br />
      <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/star topology.png"> <br />
@@ -75,11 +74,8 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
          In this example we will try to consider a star topology  forming a BSS i.e at center we will be having AP and outside nodes as STA. We will use a mobility model as required by simulator for calculating received signal. 
      </p>
      <br />
-     
   </li>
-  
-  
-  
+ 
   <li>
   WiFi and Ethernet Combination Topology <br />
     <img src ="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/Combination Topology.png">  <br />
@@ -89,7 +85,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
     <br />
   </li>
   
-   <li>  Triangular Mesh Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
+   <li>  Triangular Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
      <p>This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implemntor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology.
        </p>
      <br />
@@ -153,12 +149,13 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 ## References :
 
 <ol>
-  <li>LEDBAT: RFC 6817 (https://tools.ietf.org/html/rfc6817)</li>
-  <li>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers (http://ieeexplore.ieee.org/document/6814737/) </li>
-  <li>Exploration and evaluation of traditional TCP congestion control techniques (https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques) </li>
-  <li>Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm (https://ieeexplore.ieee.org/document/5520827) </li>
-  <li>Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 (https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval)</li>
-  <li>Wi-Fi architecture in ns-3:(https://www.nsnam.org/docs/models/html/wifi-design.html)</li>
-  <li>User documentation for Wi-Fi simulations using ns-3:(https://www.nsnam.org/docs/models/html/wifi-user.html)</li>
+  <li> <a href ="https://tools.ietf.org/html/rfc6817"> LEDBAT: RFC 6817 </a> </li>
+  <li> <a href="http://ieeexplore.ieee.org/document/6814737/"> Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers </a>  </li>
+  <li> <a href="https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques" > Exploration and evaluation of traditional TCP congestion control techniques </a>  </li>
+  <li> <a href="https://ieeexplore.ieee.org/document/5520827"> Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm </a>  </li>
+  <li> <a href="https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval"> Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 </a> </li>
+  <li> <a href="https://www.nsnam.org/docs/models/html/wifi-design.html"> Wi-Fi architecture in ns-3 </a> </li>
+  <li> <a href="https://www.nsnam.org/docs/models/html/wifi-user.html"> User documentation for Wi-Fi simulations using ns-3 </a> </li>
 </ol>
+
 
