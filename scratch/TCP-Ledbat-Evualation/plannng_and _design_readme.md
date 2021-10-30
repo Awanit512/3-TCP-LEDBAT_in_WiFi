@@ -4,7 +4,7 @@
 ## Project Overview :
 
 <p> 
-  Low Extra Delay Background Transport </b>(LEDBAT)</b>  is Less than Best Effort <b>(LBE)</b>  type of transport.  It is an experimental delay-based congestion control algorithm that seeks to utilize the available bandwidth on an end-to-end path while limiting the consequent increase in queueing delay on that path. LEDBAT uses changes in one-way delay <b>(OWD)</b> measurements to limit congestion that the flow itself induces in the network. LEDBAT is designed for use by background bulk-transfer applications to be no more aggressive than standard TCP congestion control (as specified in RFC 5681) and to yield in the presence of competing flows, thus limiting interference with the network performance of competing flows. 
+  Low Extra Delay Background Transport </b>(LEDBAT)</b>  is Less than Best Effort <b>(LBE)</b>  type of transport.  It is an experimental delay-based congestion control algorithm that seeks to utilise the available bandwidth on an end-to-end path while limiting the consequent increase in queueing delay on that path. LEDBAT uses changes in one-way delay <b>(OWD)</b> measurements to limit congestion that the flow itself induces in the network. LEDBAT is designed for use by background bulk-transfer applications to be no more aggressive than standard TCP congestion control (as specified in RFC 5681) and to yield in the presence of competing flows, thus limiting interference with the network performance of competing flows. 
   
 </p>
 
@@ -18,7 +18,7 @@
 
 ## Goals and Deliverables :
 
-Cleraly, The Goal of this Assignment is to come up with say altlest three to six Exhaustive Evaulation Exmaples programs for analyzing how Ledbat performs in Wireless Environments ( WLAN / Wifi ). 
+Cleraly, The Goal of this Assignment is to come up with say altlest three to six Exhaustive Evaluation Exmaples programs for analyzing how Ledbat performs in Wireless Environments ( WLAN / Wifi ). 
 
 We have planned to come up with examples programs which are scalable in nature.
 The users can pass Command LIne Arguments before running the programe to simulate (say) 
