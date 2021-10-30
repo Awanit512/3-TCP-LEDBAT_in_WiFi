@@ -18,16 +18,15 @@
 
 ## Goals and Deliverables :
 
-Cleraly, The Goal of this Assignment is to come up with say altlest three to six Exhaustive Evaluation Exmaples programs for analyzing how Ledbat performs in Wireless Environments ( WLAN / Wifi ). 
+Clearly, the goal of this assignment is to come up with at least three to six exhaustive evaluation examples of programmes for analysing how Ledbat performs in wireless environments (WLAN/Wifi).
 
-We have planned to come up with examples programs which are scalable in nature.
-The users can pass Command LIne Arguments before running the programe to simulate (say) 
+We have planned to come up with examples of programmes which are scalable in nature. Users can pass Command LIne Arguments before running the programme to simulate (say)
 <ul>
- <li> For Desired Simulation Time </li>
- <li> For Desired Rate Adaption Algorithm </li>
- <li> For desired Error Rate Model/ Mobility </li>
- <li> For Desired Number of Nodes in BSS( in some of the programs ) </li>
- <li> For linkrate and linkdelay in some cases e.t.c..
+ <li> For the desired simulation time </li>
+ <li> For the desired rate adaptation algorithm </li>
+ <li> For the desired error rate model/mobility </li>
+ <li> For the desired number of nodes in BSS (in some of the programmes), </li>
+ <li> For linkrate and linkdelay in some cases, e.t.c. </li>
 </ul>
 
 
