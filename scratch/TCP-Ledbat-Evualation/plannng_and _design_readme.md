@@ -40,7 +40,7 @@ For Running on default argmumnets just type following:
 
     ./waf --run  <ledbat-evaluation-filename> 
     
-Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for ifferent command line argumnets example for different rate adaption algoithms.
+Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for different command line argumnets example for different rate adaption algoithms.
  
 ## Exhaustive Evaluation Examples ( Topology Design ) :
 <br />
