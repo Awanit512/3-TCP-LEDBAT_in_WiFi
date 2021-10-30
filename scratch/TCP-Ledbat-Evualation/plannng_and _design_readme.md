@@ -63,6 +63,53 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 
 ## Timelines ..
 
+  <table>
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Week 1</td>
+            <td>
+              <ul>
+                <li> Revising ns3 documentation.</li>
+                <li> Reading helper classes. </li>
+                <li> Understanding code base for WiFi module. </li>
+                <li> Implmentation of net devices app.</li>
+              </ul>
+          </td>
+        </tr>
+        <tr>
+            <td>Week 2</td>
+           <td>
+              <ul>
+                <li> Starting to work with simple P2P. </li>
+                <li> Analyze performance using throughput and generating graphs. </li>
+              </ul>
+          </td>
+        </tr>
+      <tr>
+            <td>Week 3</td>
+           <td>
+              <ul>
+                <li> Implementing the mentioned topologies. </li>
+              </ul>
+          </td>
+        </tr>
+      <tr>
+            <td>Week 4</td>
+           <td>
+              <ul>
+                <li> Working on Documentation. </li>
+              </ul>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 
 
 ## References
