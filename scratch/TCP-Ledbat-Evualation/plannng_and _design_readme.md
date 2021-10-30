@@ -1,4 +1,4 @@
-# Planning/Design Document for Exhaustive Evaluation of TCP Ledbat in WIFI Environment.
+# Planning/Design Document for Exhaustive Evaluation of TCP Ledbat in WiFi Environment.
 
 
 ## Project Overview :
