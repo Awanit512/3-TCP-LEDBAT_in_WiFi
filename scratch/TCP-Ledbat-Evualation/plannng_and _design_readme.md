@@ -22,7 +22,7 @@ Clearly, the goal of this assignment is to come up with at least three to six ex
 
 We have planned to come up with examples of programmes which are scalable in nature. Users can pass Command Line Arguments before running the programme to simulate (say)
 <ul>
- <li> [LEDBAT: RFC 6817](https://tools.ietf.org/html/rfc6817)</li>
+ <li> For the desired simulation time</li>
  <li> For the desired rate adaptation algorithm </li>
  <li> For the desired error rate model/mobility </li>
  <li> For the desired number of nodes in BSS (in some of the programmes), </li>
@@ -68,10 +68,10 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 ## References
 
 <ol>
-  <li>LEDBAT: RFC 6817</li>
-  <li>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers </li>
-  <li>Exploration and evaluation of traditional TCP congestion control techniques</li>
-  <li>Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm</li>
-  <li>Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01</li>
+  <li>LEDBAT: RFC 6817 (https://tools.ietf.org/html/rfc6817)</li>
+  <li>Less-than-Best-Effort Service for Community Wireless Networks: Challenges at Three Layers (http://ieeexplore.ieee.org/document/6814737/) </li>
+  <li>Exploration and evaluation of traditional TCP congestion control techniques (https://www.researchgate.net/publication/257517254_Exploration_and_evaluation_of_traditional_TCP_congestion_control_techniques) </li>
+  <li>Performance evaluation of a Python implementation of the new LEDBAT congestion control algorithm (https://ieeexplore.ieee.org/document/5520827) </li>
+  <li>Common TCP Evaluation Suite draft-irtf-iccrg-tcpeval-01 (https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval)</li>
 </ol>
 
