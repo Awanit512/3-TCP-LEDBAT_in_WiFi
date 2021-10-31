@@ -34,7 +34,7 @@ The required arguments for each programe can be accesible via `--help` flag as p
 
 Example : 
 
-    ./waf --run "<ledbat-evulation-filename> --simulationTime=300s --rateAdaptionAlgo=aarf errorRateModel=yansErrorRate"
+    ./waf --run "<ledbat-evaluation-filename> --simulationTime=300s --rateAdaptationAlgo=aarf errorRateModel=yansErrorRate"
     
 For Running with default arguments just type following: 
 
