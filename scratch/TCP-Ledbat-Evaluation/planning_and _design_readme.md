@@ -36,11 +36,11 @@ Example :
 
     ./waf --run "<ledbat-evulation-filename> --simulationTime=300s --rateAdaptionAlgo=aarf errorRateModel=yansErrorRate"
     
-For Running on default argmumnets just type following: 
+For Running with default arguments just type following: 
 
     ./waf --run  <ledbat-evaluation-filename> 
     
-Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for different command line argumnets example for different rate adaption algoithms.
+Finally, calculating Throughput and generating corresponding plots for Evaluation purposed for different command line arguments example for different rate adaptation algorithms.
  
 ## Exhaustive Evaluation Examples ( Topology Design ) :
 <br />
@@ -48,7 +48,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
 <ol>
   <li>  Simple pRp wireless network Tolpology <br />
    <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/simple-pRp.drawio.png"> <br />
-   <p> This is an simple node(STA)-AP-node(STA) Topology. The STAs will be configured to have a mobility model helping simulator to calcuate received signal.
+   <p> This is an simple node(STA)-AP-node(STA) Topology. The STAs will be configured to have a mobility model helping simulator to calculate received signal.
      </p>
     <br />
   </li>
@@ -63,7 +63,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   <li> Flexible Dumbell Topology <br />
  <img src="https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/flexible-dumpbell.png"> <br />
      <p>
-       This is a Flexible Dumbell Topology, the main difference between Simple dumbell and Flexible  is justified by its name only i.e in formr the topology is fixed type while in latter we will take user's command line arguments (by default the topology hold its inheritence as that of simple dumbell i.e 3 STA connected to a AP0 and another 3 STAs connected to another AP1 ), thus users can simulate for the topology by passing the number of nodes for BSS0 (AP0) AND BSS1 (AP1) thus producing a two BSS interaction example. 
+       This is a Flexible Dumbell Topology, the main difference between Simple dumbell and Flexible  is justified by its name only i.e in former the topology is fixed type while in latter we will take user's command line arguments (by default the topology hold its inheritence as that of simple dumbell i.e 3 STA connected to a AP0 and another 3 STAs connected to another AP1 ), thus users can simulate for the topology by passing the number of nodes for BSS0 (AP0) AND BSS1 (AP1) thus producing a two BSS interaction example. 
   </p>
     <br />
   </li>
@@ -86,7 +86,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
   </li>
   
    <li>  Triangular Topology <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/traingular.png">  <br />
-     <p>This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implemntor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology.
+     <p>This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implementor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology.
        </p>
      <br />
   </li>
@@ -111,8 +111,8 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
               <ul>
                 <li> Revising ns3 documentation.</li>
                 <li> Reading helper classes. </li>
-                <li> Understanding code-base for WiFi module a listed in Refrences. </li>
-                <li> Implmentation will be Initiated.</li>
+                <li> Understanding code-base for WiFi module a listed in References. </li>
+                <li> Implementation will be Initiated.</li>
               </ul>
           </td>
         </tr>
@@ -130,7 +130,7 @@ Finally, calculating Throughput and generating corresponding plots for Evaluatio
            <td>
               <ul>
                 <li> Implementing the rest mentioned topologies.</li>
-                <li> Followed by analyzing the performance of TCP Ldbat for different Rate Adaption Algorithms and generating plots. </li>
+                <li> Followed by analyzing the performance of TCP Ledbat for different Rate Adaptation Algorithms and generating plots. </li>
               </ul>
           </td>
         </tr>
