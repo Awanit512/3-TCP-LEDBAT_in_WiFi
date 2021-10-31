@@ -46,6 +46,8 @@ Finally, calculating Throughput and generating corresponding plots for evaluatio
  
  <p>
 The Images for the topology are created by team itself by use of online available tool  : https://app.diagrams.net/  
+The Link Delays and Link Rate we did not specify in beloe images as that will be dynamic in nature and will depend upon the value entered by user (as mentioned in above section).
+  
 </p>
 
 <br />
