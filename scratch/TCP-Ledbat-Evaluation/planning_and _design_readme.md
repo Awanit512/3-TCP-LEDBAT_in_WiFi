@@ -42,7 +42,7 @@ For Running with default arguments just type following:
     
 Finally, calculating Throughput and generating corresponding plots for evaluation purposes for the different command line arguments example for different rate adaptation algorithms.
 
-The Link Delays and Link Rate we did not specify in beloe images as that will be dynamic in nature and will depend upon the value entered by user (as mentioned in above section).
+The Link Delays and Link Rate we did not specify in below images as that will be dynamic in nature and will depend upon the value entered by user (as mentioned in above section).
 
 The Evaluation Examples Experiments are planned to carry out on 802.11 b/g and 802.11ac Gigabit Wifi Standards.
 <b r/>
