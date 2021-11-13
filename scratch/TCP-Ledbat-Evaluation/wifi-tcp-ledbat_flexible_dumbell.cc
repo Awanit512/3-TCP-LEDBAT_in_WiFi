@@ -77,6 +77,8 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
 #include "ns3/config-store-module.h"
 #include "ns3/command-line.h"
 #include "ns3/gnuplot.h"
+#include "ns3/rectangle.h"
+#include "ns3/flow-monitor-helper.h"
 #include "ns3/athstats-helper.h"
 
 using namespace ns3;
@@ -86,11 +88,13 @@ NS_LOG_COMPONENT_DEFINE ("Evaluation of TCP-LEDBAT For Flexible DUmbell Topology
 
 
 
-std::vector<uint64_t> lastTotalRx;          /* Vector of last total received bytes */
-std::vector<uint64_t> flow;                 /*Vector of all flows to right Dumbell*/
-double aggregate=0.0;                         /*Total aggreagted value of all flows at right side of dumbell*/
-std::vector<Ptr<PacketSink> > sink;         /* Vector of Pointer to the packet sink application */
-std::vector< std::ofstream* > outfile;       /*Vector of outfile for GNU plotting for corresponding flows*/
+std::vector<uint64_t> lastTotalRx;              /* Vector of last total received bytes */
+std::vector<uint64_t> flow;                     /*Vector of all flows to right Dumbell*/
+double aggregate=0.0;                           /*Total aggreagted value of all flows at right side of dumbell*/
+std::vector<Ptr<PacketSink> > sink;             /* Vector of Pointer to the packet sink application */
+std::vector< std::ofstream* > outfile;          /*Vector of outfile for GNU plotting for corresponding flows*/
+std::ofstream  allThroughputPlt;                /* A GNU PLOT plt  containing all throughput graphs */
+std::ofstream  allThroughputData;               /* A GNU PLOT data containing all throughput.*/
 uint64_t  MAXOUTFILE = 8;                  
  /* Maximum Number of gnu plot will be 8 so if at right side of dumbell we have more 
  * than 8 STA then 8 sta's flow will be selected at random for generating plot
@@ -98,64 +102,13 @@ uint64_t  MAXOUTFILE = 8;
  * in case where there are many sta nodes at the right side of dumbell. 
 */
 
+std::string 
+GetOutputFileName ()
+{
+    std::string outPutFileName = "wifi-ledbat-Flexible-dumbell";
+    return outPutFileName;
+}
 
-
-// wifi-tcp
-
-
-// #include "ns3/tcp-westwood.h"
-
-
-
-//EXAMPES FROM THIRD.CC can also be used  and that from 
-//LBE_Evualation.cc
-
-// Fro wifi-adhoc we get info that how ot go for various rate adaption algorithm
-//How to go for plotting GNU PLOT also setup of ADHOC/INFRASTRUCTURE less MDOE
-//Setting of mobility model--> ConstantPositionMobilityModel 
-//and position allocater --> ListPositionAllcoater
-
-
-
-//  ************************  IMPORTANT  ************************
-
-
-/*
- * This is a simple example to test TCP over 802.11n (with MPDU aggregation enabled).
- *
- * Network topology:
- *
- *   Ap    STA
- *   *      *
- *   |      |
- *   n1     n2
- *
- * In this example, an HT station sends TCP packets to the access point.
- * We report the total throughput received during a window of 100ms.
- * The user can specify the application data rate and choose the variant
- * of TCP i.e. congestion control algorithm to use.
- */
-
-//////////////////////////   ****************        BUt this is lot similar to git repo of LBE_Evaluation.cc *******************
-
-
-
-
-//Till Now we can see only one flow we want some competiting flows 
-
-/////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-//  ******************    TO BE DETERMINED ( TBD )    *****************
-
-// Need to inspect about on - off and PacketSocket part present both in adhoc and ap 
 
 void 
 ConfigureWifiStandard ( WifiHelper &wifiHelper , std::string wifiStandard )
@@ -263,7 +216,9 @@ ConfigureRemoteStationManager (WifiHelper &wifiHelper, std::string rateAdaptionA
 void
 ThroughputCalculation (double samplingPeriod, uint64_t minimaBetweenLeftAndRightSide)
 {
+   
   Time now = Simulator::Now ();  //Current( Virtual simulation ) Time  
+  allThroughputData <<  now.GetSeconds ();
   for (uint64_t nodeNumber=0; nodeNumber < minimaBetweenLeftAndRightSide; nodeNumber++)
   {  
     /* 
@@ -276,14 +231,15 @@ ThroughputCalculation (double samplingPeriod, uint64_t minimaBetweenLeftAndRight
     if(nodeNumber < MAXOUTFILE + 1)
         {
             *(outfile[nodeNumber]) << now.GetSeconds () << " " << currentFlow  << std::endl;
+            allThroughputData << " " << currentFlow;
         }
     
     
     flow[nodeNumber] += currentFlow ;
-    std::cout << now.GetSeconds () << "s: \t" << currentFlow << " Mbit/s" <<" -- "<< sink[nodeNumber]->GetTotalRx () << "GetTotalRx"<<std::endl;
+    std::cout <<"Time :"<< now.GetSeconds () << "s,\tcurrentFlow :" << currentFlow << " Mbit/s,\tGetTotalRx: " << sink[nodeNumber]->GetTotalRx ()  << ",\tlastTotalRx: " << lastTotalRx[nodeNumber] << std::endl;
     lastTotalRx[nodeNumber] = sink[nodeNumber]->GetTotalRx ();
   }
-
+  allThroughputData<< "\n";
   Simulator::Schedule (MilliSeconds (samplingPeriod), &ThroughputCalculation, samplingPeriod, minimaBetweenLeftAndRightSide);
 
 }
@@ -329,12 +285,14 @@ int main (int argc, char *argv[])
   std::string propagationLossModel = "FriisPropagationLossModel";           /* PropagationLossModel to be used in Phy layer*/
   double simulationTime = 10.0;                                             /* Simulation time in seconds by default = 10. */
   bool pcapTracing = false;                                                 /* PCAP Tracing is enabled or not. */
+  bool enableFlowMon = true;                                                /* Flow monitor  Tracing is enabled or not. */
+  bool enableTracing = true;                                                /* ASCII  Tracing is enabled or not. */
   std::string rateAdaptionAlgo = "aarf";                                    /* Rate adaption algorithm or wifi remote station manager to be used*/
-  std::string mobilityModel = "RandomDirection2dMobilityModel";                  /*  Mobility Model to be used for STA's MobilityModel*/
+  std::string mobilityModel = "RandomDirection2dMobilityModel";             /*  Mobility Model to be used for STA's MobilityModel*/
   std::string errorRateModel = "YansErrorRateModel";                        /* Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel*/
   uint32_t leftSTAs = 3;                                                    /* Number of STAs in BSS0 */
   uint32_t rightSTAs = 3;                                                   /* Number of STAs in BSS1 */
-  double samplingPeriod = 100.0;                                              /*Sampling Period for sampling throughput (in milisec) */
+  double samplingPeriod = 100.0;                                            /*Sampling Period for sampling throughput (in milisec) */
   std::string wifiStandard = "b";                                           /* Wifi STandard example 802.11b , 802.11a, 802.11n, 802.11ac, 802.11g */
    
 
@@ -349,6 +307,8 @@ int main (int argc, char *argv[])
   cmd.AddValue ("propagationLossModel" , "PropagationLossModel to be used in Phy layer example : FriisPropagationLossModel , LogDistancePropogationLossModel" , propagationLossModel);
   cmd.AddValue ("simulationTime", "Simulation time in seconds", simulationTime);
   cmd.AddValue ("pcapTracing", "Enable/disable PCAP Tracing", pcapTracing);
+  cmd.AddValue ("enableFlowMon", "Enable/disable FLOWMON Tracing", enableFlowMon);
+  cmd.AddValue ("enableTracing", "Enable/disable ASCII Tracing", enableTracing);
   cmd.AddValue ("rateAdaptionAlgo", "Rate Adaption Algorithm or Wifi remote station manager to be use. [ Please write RAA's acronym and in small letters ex : aarf, arf, onoe, minstreal, ideal or rbar etc..]", rateAdaptionAlgo);
   cmd.AddValue ("mobilityModel", "Mobility Model to be used for STAs", mobilityModel);
   cmd.AddValue ("errorRateModel", "Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel", errorRateModel);
@@ -374,11 +334,11 @@ int main (int argc, char *argv[])
         *outputGnuPlotPtr<< "set xlabel \"X Values\"\n";
         *outputGnuPlotPtr<< "set ylabel \"Y Values\"\n\n";
         *outputGnuPlotPtr<< "set xrange [0:20]\n";
-        *outputGnuPlotPtr<< "set yrange [0:4]\n";
+        *outputGnuPlotPtr<< "set yrange [0:2]\n";
         *outputGnuPlotPtr<<"plot \"-\"  title \"Throughput\" with linespoints\n";
         outfile.push_back(outputGnuPlotPtr);
     }
-    
+
   /* Configure TCP Options */
 //   Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (payloadSize));
 
@@ -503,13 +463,23 @@ int main (int argc, char *argv[])
 
 
   // mobility configuration for right dumbell STAs.
-  mobility.SetPositionAllocator ("ns3::GridPositionAllocator",
-                                 "MinX", DoubleValue (100.0),
-                                 "MinY", DoubleValue (100.0),
-                                 "DeltaX", DoubleValue (15.0),
-                                 "DeltaY", DoubleValue (15.0),
-                                 "GridWidth", UintegerValue (1),
-                                 "LayoutType", StringValue ("RowFirst"));
+//   mobility.SetPositionAllocator ("ns3::GridPositionAllocator",
+//                                  "MinX", DoubleValue (100.0),
+//                                  "MinY", DoubleValue (100.0),
+//                                  "DeltaX", DoubleValue (15.0),
+//                                  "DeltaY", DoubleValue (15.0),
+//                                  "GridWidth", UintegerValue (1),
+//                                  "LayoutType", StringValue ("RowFirst"));
+
+  Ptr<ListPositionAllocator> positionAllocRightDumbell = CreateObject<ListPositionAllocator> ();
+  for (uint32_t nodeNumber = 0; nodeNumber < m_rightDumbellSTANode.GetN (); ++nodeNumber )
+   {      
+        Ptr<UniformRandomVariable> randomNumber = CreateObject<UniformRandomVariable> ();
+        randomNumber->SetAttribute ("Min", DoubleValue (5.0));
+        randomNumber->SetAttribute ("Max", DoubleValue (15.0));
+        positionAllocRightDumbell->Add (Vector (100.0 + 5.0*nodeNumber + (double) randomNumber->GetInteger (), 100.0 + 5.0*nodeNumber + (double) randomNumber->GetInteger (), 0.0));
+   }
+  mobility.SetPositionAllocator (positionAllocRightDumbell);
   
   //Mobility Model
   if (mobilityModel == "RandomWalk2dMobilityModel" )
@@ -616,11 +586,56 @@ int main (int argc, char *argv[])
 
   sinkAppsNodes.Start (Seconds (0.0));
   sinkAppsNodes.Stop (Seconds (simulationTime));
+
+   std::ostringstream tempTssData;
+   tempTssData << "Combine-Throughput-Flow-data.txt";
+   allThroughputData.open (tempTssData.str().c_str(), std::ofstream::out);
+
+   std::ostringstream tempTss;
+   tempTss << "Combine-Throughput-Flow.plt";
+   allThroughputPlt.open (tempTss.str().c_str(), std::ofstream::out);
+   allThroughputPlt<< "set terminal pdf" <<"\n";
+   allThroughputPlt<< "set output \"" << "Combine-Throughput-Flow.pdf" <<"\"\n"; 
+   allThroughputPlt<< "set title \"" << "Throghput of All "+ std::to_string( std::min( MAXOUTFILE, minimaBetweenLeftAndRightSide ) )+ " Flows" << "\"\n";
+   allThroughputPlt<< "set xlabel \"TimeStamps\"\n";
+   allThroughputPlt<< "set ylabel \"Throughput\"\n\n";
+   allThroughputPlt<< "set xrange [0:"+  std::to_string( simulationTime ) + "]\n";
+   allThroughputPlt<< "set yrange [0:4]\n";
+   allThroughputPlt<<"plot \"Combine-Throughput-Flow-data.txt\" using 1:2 title \"Flow 1\" with lines lw 2";
+  for(uint64_t nodeNumber = 1 ; nodeNumber < std::min( MAXOUTFILE, minimaBetweenLeftAndRightSide ) ;nodeNumber++)
+    {
+        allThroughputPlt<<", \"Combine-Throughput-Flow-data.txt\" using 1:"+ std::to_string(nodeNumber+2) + " title \"Flow-" + std::to_string(1+nodeNumber)+"\" with lines lw 2";
+    }
+   allThroughputPlt<< "\n";
+
   
   Simulator::Schedule (Seconds (0), &ThroughputCalculation, samplingPeriod, minimaBetweenLeftAndRightSide);
   NS_LOG_INFO ("Run Simulation.");
   
   Simulator::Stop(Seconds(simulationTime));
+
+
+  /* Enable Traces */
+  if (pcapTracing)
+    {
+      wifiPhy.SetPcapDataLinkType (WifiPhyHelper::DLT_IEEE802_11_RADIO);
+      wifiPhy.EnablePcap ("Wl-Fd-AccessPoint", m_accessPointsDevices);
+      wifiPhy.EnablePcap ("Wl-Fd-Station", m_rightDumbellDevices);
+    }
+
+ if (enableTracing)
+    {
+      AsciiTraceHelper ascii;
+      wifiPhy.EnableAsciiAll (ascii.CreateFileStream (GetOutputFileName () + ".tr"));
+    }
+
+  FlowMonitorHelper flowmonHelper;
+
+  if (enableFlowMon)
+    {
+      flowmonHelper.InstallAll ();
+    }
+
 
   AnimationInterface anim ("flexible-dumbell-animation.xml");
     // position =  // configure the position example anim.SetConstantPosition(nodes.Get(0), 1.0, 2.0);
@@ -636,12 +651,25 @@ int main (int argc, char *argv[])
      system(("gnuplot Flow-" + std::to_string(nodeNumber) + ".plt").c_str());
     } 
 
+    // allThroughput<<"e\n";  
+    allThroughputData.close();
+    allThroughputPlt.close();
+    system( "gnuplot Combine-Throughput-Flow.plt" );
+
     aggregate=aggregate/(double)200 ;
     std::cout<<"aggregate throughput:"<<aggregate<<std::endl;
     // f0=f0/(double)200;
     // f1=f1/(double)200;
     // f2=f2/(double)200;
     // std::cout<<"aggregate throughput:"<<aggregate<<"\nFlow0:"<<f0<<"\nFlow1:"<<f1<<"\nFlow2:"<<f2;
+
+
+  if (enableFlowMon)
+    {
+      flowmonHelper.SerializeToXmlFile ((GetOutputFileName () + ".flomon"), false, false);
+      flowmonHelper.SerializeToXmlFile ((GetOutputFileName () + ".xml"), true, true);
+    }
+
     return 0;
 }
 
