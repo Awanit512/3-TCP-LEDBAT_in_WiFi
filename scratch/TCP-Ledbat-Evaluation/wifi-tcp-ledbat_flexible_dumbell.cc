@@ -80,7 +80,7 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
 using namespace ns3;
 
 
-NS_LOG_COMPONENT_DEFINE ("Evaluation of TCP-LEDBAT For Flexible DUmbell Topology");
+NS_LOG_COMPONENT_DEFINE ("Evaluation of TCP-LEDBAT For Flexible Dumbell Topology");
 
 
 
