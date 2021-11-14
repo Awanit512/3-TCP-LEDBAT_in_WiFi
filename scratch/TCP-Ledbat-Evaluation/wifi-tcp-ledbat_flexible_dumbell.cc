@@ -30,10 +30,6 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
  * To compile with command line(useful for varying parameters):
  * ./waf --run "<this file name> --simulationTime=0.3s --rateAdaptionAlgo=minstreal"
  *
- * To turn on NS_LOG:
- * export NS_LOG=multirate=level_all
- * (can only view log if built with ./waf -d debug configure)
- *
  * To debug:
  * ./waf --shell
  * gdb ./build/debug/+ < path to this file from scratch folder>
