@@ -28,7 +28,7 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
  * ./waf --run wifi-multirate
  *
  * To compile with command line(useful for varying parameters):
- * ./waf --run "<this file name> --simulationTime=0.3s --rateAdaptionAlgo=ns3::MinstrelWifiManager"
+ * ./waf --run "<this file name> --simulationTime=0.3s --rateAdaptionAlgo=minstreal"
  *
  * To turn on NS_LOG:
  * export NS_LOG=multirate=level_all
