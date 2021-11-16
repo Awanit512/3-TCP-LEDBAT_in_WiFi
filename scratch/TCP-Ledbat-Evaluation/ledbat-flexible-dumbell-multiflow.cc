@@ -3,7 +3,7 @@ Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
 
 * This code example try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
 * This experiment/ code is extenion of experiment with titled : wifi-tcp-ledbat_flexible_dumbell.cc residing in 3-TCP-LEDBAT_in_WiFi/scratch/TCP-Ledbat-Evaluation/Nodes.
-*This example code is difffernet from the above stated code in the way tht it support multiflow i.e as in former all nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
+* This example code is differnet from the above stated code in the way tht it support multiflow i.e as in former all nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
 * But in this 60% of STA at left side of dumbell is enabled with other variant of TCP Socket Type (i.e other than TcpLedbat) and similarily 50% STA at the right side of dumbell.
 * Thus throug this example we can analyze the TcpLedbat Performance in presence of a competitive flow in wifi environmenst.
 * We had derived the graph after running the experiment 
