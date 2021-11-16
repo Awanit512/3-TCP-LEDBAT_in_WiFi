@@ -809,7 +809,7 @@ int main (int argc, char *argv[])
     {
      *outfile[nodeNumber]<<"e\n";  
      //*outfile[nodeNumber].close();
-     system(("gnuplot Flow-" + std::to_string(nodeNumber) + ".plt").c_str());
+     system(("gnuplot Flow-" + std::to_string(nodeNumber+1) + ".plt").c_str());
     } 
 
     // allThroughput<<"e\n";  
