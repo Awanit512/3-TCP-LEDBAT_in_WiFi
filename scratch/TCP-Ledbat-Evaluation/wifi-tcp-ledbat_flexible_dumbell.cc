@@ -21,12 +21,12 @@ Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
     ./waf -v
    
   Running The Code / Experiment : 
-   ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible__dumbell --simulationTime=28" 
+   ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --simulationTime=28" 
    
    
  If user want to see the required command line argumenst (Assuming, the above troubleshooting has already been performed.):
  
-    ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible__dumbell --help" 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --help" 
     
     
  
