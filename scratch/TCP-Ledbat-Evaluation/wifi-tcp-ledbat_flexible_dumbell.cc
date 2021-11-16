@@ -1,5 +1,5 @@
 /*
-# Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
+Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
 
 Flexible  Wireless Dumbell topology 
               
@@ -101,6 +101,66 @@ uint64_t  MAXOUTFILE = 8;
  * This is done in order to avoid flooding of gnu plot in base folder 
  * in case where there are many sta nodes at the right side of dumbell. 
 */
+
+
+
+// wifi-tcp
+
+
+// #include "ns3/tcp-westwood.h"
+
+
+
+//EXAMPES FROM THIRD.CC can also be used  and that from 
+//LBE_Evualation.cc
+
+// Fro wifi-adhoc we get info that how ot go for various rate adaption algorithm
+//How to go for plotting GNU PLOT also setup of ADHOC/INFRASTRUCTURE less MDOE
+//Setting of mobility model--> ConstantPositionMobilityModel 
+//and position allocater --> ListPositionAllcoater
+
+
+
+//  ************************  IMPORTANT  ************************
+
+
+/*
+ * This is a simple example to test TCP over 802.11n (with MPDU aggregation enabled).
+ *
+ * Network topology:
+ *
+ *   Ap    STA
+ *   *      *
+ *   |      |
+ *   n1     n2
+ *
+ * In this example, an HT station sends TCP packets to the access point.
+ * We report the total throughput received during a window of 100ms.
+ * The user can specify the application data rate and choose the variant
+ * of TCP i.e. congestion control algorithm to use.
+ */
+
+//////////////////////////   ****************        BUt this is lot similar to git repo of LBE_Evaluation.cc *******************
+
+
+
+
+//Till Now we can see only one flow we want some competiting flows 
+
+/////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+//  ******************    TO BE DETERMINED ( TBD )    *****************
+
+// Need to inspect about on - off and PacketSocket part present both in adhoc and ap 
+
 
 std::string 
 GetOutputFileName ()
@@ -273,6 +333,14 @@ AdvancePosition (Ptr<Node> node)
   Simulator::Schedule (Seconds (1.0), &AdvancePosition, node);
 }
 
+void
+CourseChange (std::string context, Ptr<const MobilityModel> model)
+  {
+    Vector position = model->GetPosition ();
+    NS_LOG_UNCOND (context << 
+      " x = " << position.x << ", y = " << position.y);
+  }
+
 int main (int argc, char *argv[])
 {
   Config::SetDefault ("ns3::TcpL4Protocol::SocketType", TypeIdValue (TypeId::LookupByName (std::string ("ns3::") + "TcpLedbat")));
@@ -325,17 +393,17 @@ int main (int argc, char *argv[])
         lastTotalRx.push_back(0.0);
         flow.push_back(0.0);
 
-        std::ofstream* outputGnuPlotPtr = new std::ofstream("Flow-"+ std::to_string(nodeNumber) + ".plt");
+        std::ofstream* outputGnuPlotPtr = new std::ofstream("Flow-"+ std::to_string(nodeNumber+1) + ".plt");
         std::ostringstream tempTss;
-        //tempTss << "Flow-"+ std::to_string(nodeNumber) + ".plt";
+        //tempTss << "Flow-"+ std::to_string(nodeNumber+1) + ".plt";
         //outputGnuPlot.open (tempTss.str().c_str(), std::ofstream::out);
         *outputGnuPlotPtr<< "set terminal png" <<"\n";
-        *outputGnuPlotPtr<< "set output \"" << "Flow-"+std::to_string(nodeNumber)+".png" <<"\"\n"; 
-        *outputGnuPlotPtr<< "set title \"" << "Flow-"+std::to_string(nodeNumber) << "\"\n";
+        *outputGnuPlotPtr<< "set output \"" << "Flow-"+std::to_string(nodeNumber+1)+".png" <<"\"\n"; 
+        *outputGnuPlotPtr<< "set title \"" << "Flow-"+std::to_string(nodeNumber+1) << "\"\n";
         *outputGnuPlotPtr<< "set xlabel \"X Values\"\n";
         *outputGnuPlotPtr<< "set ylabel \"Y Values\"\n\n";
-        *outputGnuPlotPtr<< "set xrange [0:20]\n";
-        *outputGnuPlotPtr<< "set yrange [0:2]\n";
+        *outputGnuPlotPtr<< "set xrange [0:" + std::to_string( (int) simulationTime+10.0 ) + "]\n";
+        *outputGnuPlotPtr<< "set yrange [0:5]\n";
         *outputGnuPlotPtr<<"plot \"-\"  title \"Throughput\" with linespoints\n";
         outfile.push_back(outputGnuPlotPtr);
     }
@@ -680,11 +748,11 @@ int main (int argc, char *argv[])
    allThroughputPlt.open (tempTss.str().c_str(), std::ofstream::out);
    allThroughputPlt<< "set terminal png" <<"\n";
    allThroughputPlt<< "set output \"" << "Combine-Throughput-Flow.png" <<"\"\n"; 
-   allThroughputPlt<< "set title \"" << "Throghput of All "+ std::to_string( std::min( MAXOUTFILE, minimaBetweenLeftAndRightSide ) )+ " Flows" << "\"\n";
+   allThroughputPlt<< "set title \"" << "Throghput of all "+ std::to_string( std::min( MAXOUTFILE, minimaBetweenLeftAndRightSide ) )+ " Flows" << "\"\n";
    allThroughputPlt<< "set xlabel \"TimeStamps\"\n";
    allThroughputPlt<< "set ylabel \"Throughput\"\n\n";
-   allThroughputPlt<< "set xrange [0:"+  std::to_string( simulationTime ) + "]\n";
-   allThroughputPlt<< "set yrange [0:4]\n";
+   allThroughputPlt<< "set xrange [0:"+  std::to_string( (int) simulationTime+10.0 ) + "]\n";
+   allThroughputPlt<< "set yrange [0:3]\n";
    allThroughputPlt<<"plot \"Combine-Throughput-Flow-data.txt\" using 1:2 title \"Flow 1\" with lines lw 2";
   for(uint64_t nodeNumber = 1 ; nodeNumber < std::min( MAXOUTFILE, minimaBetweenLeftAndRightSide ) ;nodeNumber++)
     {
@@ -695,7 +763,6 @@ int main (int argc, char *argv[])
   
   Simulator::Schedule (Seconds (0), &ThroughputCalculation, samplingPeriod, minimaBetweenLeftAndRightSide);
   NS_LOG_INFO ("Run Simulation.");
-  
   Simulator::Stop(Seconds(simulationTime));
 
 
@@ -729,14 +796,37 @@ int main (int argc, char *argv[])
     // position =  // configure the position example anim.SetConstantPosition(nodes.Get(0), 1.0, 2.0);
     // anim.SetConstantPosition(nodes.Get(0), position);
     // anim.SetConstantPosition(nodes.Get(1), position)
+
+
+
+
+// To track the position of STA 
+    // std::ostringstream oss;
+    // oss << "/NodeList/" << m_rightDumbellSTANode.Get (2)->GetId () << "/$ns3::MobilityModel/CourseChange";
+
+    // Config::Connect (oss.str (), MakeCallback (&CourseChange));
+
+      
+
+    // std::cout << "The below stats is for AP1 " <<std::endl;
+    // std::cout << "Ipv4 Interface Address P2P " << (m_accessPoints.Get(1)->GetObject<Ipv4> ())->GetAddress (1,0) << std::endl;
+    // std::cout << "Ipv4 Interface Address WIFI " << (m_accessPoints.Get(1)->GetObject<Ipv4> ())->GetAddress (2,0) << std::endl;
+    // std::cout << "Ipv4 Local Address P2P" << ((m_accessPoints.Get(1)->GetObject<Ipv4> ())->GetAddress (1,0)).GetLocal() << std::endl;
+    // std::cout << "Ipv4 Local Address WIFI " << ((m_accessPoints.Get(1)->GetObject<Ipv4> ())->GetAddress (2,0)).GetLocal() << std::endl;
+
+
+
     Simulator::Run();
     Simulator::Destroy();
+
+
+
 
     for (uint64_t nodeNumber=0; nodeNumber < std::min(MAXOUTFILE ,minimaBetweenLeftAndRightSide); nodeNumber++)
     {
      *outfile[nodeNumber]<<"e\n";  
      //*outfile[nodeNumber].close();
-     system(("gnuplot Flow-" + std::to_string(nodeNumber) + ".plt").c_str());
+     system(("gnuplot Flow-" + std::to_string(nodeNumber+1) + ".plt").c_str());
     } 
 
     // allThroughput<<"e\n";  
