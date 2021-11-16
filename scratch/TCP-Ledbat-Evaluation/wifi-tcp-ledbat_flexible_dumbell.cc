@@ -20,11 +20,11 @@ Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
     CXXFLAGS="-Wall" ./waf configure 
     ./waf -v
    
-  Running The Code / Experiment : 
-   ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --simulationTime=28" 
+  Running The Code / Experiment for say 28 seconds and for 5 STA at both sides of dumbell : 
+   ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --simulationTime=28 --leftSTAs=8 --rightSTAs=8" 
    
    
- If user want to see the required command line argumenst (Assuming, the above troubleshooting has already been performed.):
+ If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
  
     ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --help" 
     
