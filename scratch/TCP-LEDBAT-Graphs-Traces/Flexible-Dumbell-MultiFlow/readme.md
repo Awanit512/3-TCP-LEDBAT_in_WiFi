@@ -34,3 +34,43 @@ Note in GNU Plots for 8 flows cooresponding to 8 STA at right side of dumbell:
         # Flow 1, Flow 2, Flow 3 , Flow 4 are TcpNewReno flows
         
         # Flow 5, Flow 6, Flow 7 , Flow 8 are TcpLedbat flows
+        
+        
+        
+        
+NOTE :
+
+
+
+* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow` try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
+* This experiment/ code is extenion of experiment with titled : wifi-tcp-ledbat_flexible_dumbell.cc residing in 3-TCP-LEDBAT_in_WiFi/scratch/TCP-Ledbat-Evaluation/Nodes.
+* This example code is differnet from the above stated code in the way tht it support multiflow i.e as in former all nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
+* But in this 60% of STA at left side of dumbell is enabled with other variant of TCP Socket Type (i.e other than TcpLedbat) and similarily 50% STA at the right side of dumbell.
+* Thus throug this example we can analyze the TcpLedbat Performance in presence of a competitive flow in wifi environmenst.
+* We had derived the graph after running the experiment 
+* And graphs depict the flows ( Throughput received by STA at each samplePerid (100 ms) some flows are for TcpLedbat and other are for Othr Tcp Varient used in default case it's TcpNewReno ) of the STA at the right side of Dumbell i.e N_r_1 , ...N_r_n' 
+* We have capped the plot generation for maximum upto  8 STA stations at the right side so that the generated plots does not  flood the base directoy ns3.3x/ in case when 
+* number of STA at the right side of dumbell is high say 30-40. as a result if not capped then around 60-80 files of (.plt and .png) will be genearated 
+* User can simply increse/decrease (modify) this capped value by changing the global variable value MAXOUTFILE to desired value.
+
+
+* In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
+
+
+* In that case better to run these experiments for ns3.32 (as these experimenst are performed in ns3.32 ) and before running we have to troublshoot this issue in following way:
+
+*Troubleshooting:
+
+    CXXFLAGS="-Wall" ./waf configure 
+    ./waf -v
+ 
+ 
+*Running The Code / Experiment for say 28 seconds and for 8 STA at both sides of dumbell : 
+
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=8 --rightSTAs=8" 
+   
+   
+*If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
+ 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --help" 
+    
