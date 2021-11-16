@@ -8,8 +8,12 @@ Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
 * we have capped the plot generation for maximum 8 STA stations at the right side so that the generated plots does not  flood the base directoy ns3.3x/ in case when 
 * number of STA at the right side of dumbell is high say 30-40. as a result if not capped then around 60-80 files of (.plt and .png) will be genearated 
 * User can simply increse/decrease (modify) this capped value by changing the global variable value MAXOUTFILE to desired value.
+
+
+
+
 * In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
-* 
+
 
 * In that case better to run these experiments for ns3.32 (as these experimenst are performed in ns3.32 ) and before running we have to troublshoot this issue in following way:
   Troubleshooting:
