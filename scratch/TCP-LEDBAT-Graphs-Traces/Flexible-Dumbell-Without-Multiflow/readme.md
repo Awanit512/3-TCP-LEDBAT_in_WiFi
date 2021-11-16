@@ -33,3 +33,38 @@ Note in GNU Plots for 5 flows cooresponding to 5 STA at right side of dumbell:
         # Flow 1, Flow 2, Flow 3 , Flow 4, Flow 5 are TcpLedbat flows
         
 ***
+
+
+NOTE :
+
+
+* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell` try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
+* All Nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
+* we derive the graph after running the experiment 
+* And graphs depict the flows (Throughput received by STA at each samplePerid (100 ms) ) of the STA at the right side of Dumbell i.e N_r_1 , ...N_r_n' 
+* we have capped the plot generation for maximum 8 STA stations at the right side so that the generated plots does not  flood the base directoy ns3.3x/ in case when 
+* number of STA at the right side of dumbell is high say 30-40. as a result if not capped then around 60-80 files of (.plt and .png) will be genearated 
+* User can simply increse/decrease (modify) this capped value by changing the global variable value MAXOUTFILE to desired value.
+
+
+
+* In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
+* In that case better to run these experiments for ns3.32 (as these experimenst are performed in ns3.32 ) and before running we have to troublshoot this issue in following way:
+
+
+*Troubleshooting:
+
+    CXXFLAGS="-Wall" ./waf configure 
+    ./waf -v
+   
+*Running The Code / Experiment for say 28 seconds and for 5 STA at both sides of dumbell : 
+
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --simulationTime=28 --leftSTAs=8 --rightSTAs=8" 
+   
+   
+*If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
+ 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible_dumbell --help" 
+    
+    
+ 
