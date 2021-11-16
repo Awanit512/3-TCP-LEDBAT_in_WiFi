@@ -4,7 +4,7 @@
 
 The arguments feeded to the exampe while running it are following: 
 
-    ./waf --run "scratch/wifi-tcp-ledbat-multirate --simulationTime=33 --leftSTAs=8 --rightSTAs=8 --pcapTracing=true"
+    ./waf --run "scratch/wifi-tcp-ledbat-multiflow --simulationTime=33 --leftSTAs=8 --rightSTAs=8 --pcapTracing=true"
   
   ***
   
