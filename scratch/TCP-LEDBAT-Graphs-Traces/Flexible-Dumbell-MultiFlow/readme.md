@@ -1,4 +1,4 @@
-# This folder Contains all the relevent pcap, flowmon ,gnu plt trace files along with correspoding graphs of throghput flows against time (thses throughput are taken with samplePeriod of 100 ms).
+# This folder contains all the relevent pcap, flowmon ,gnu plt trace files along with correspoding graphs of throghput flows against time (thses throughput are taken with samplePeriod of 100 ms).
 
 ## Author : Awanit Ranjan (181CO161)
 
