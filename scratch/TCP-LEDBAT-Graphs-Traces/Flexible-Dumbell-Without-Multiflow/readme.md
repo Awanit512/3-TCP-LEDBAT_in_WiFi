@@ -27,8 +27,7 @@ Information Related to Experiments :
   
   > "ConstantSpeedPropagationDelayModel" is used as Propagation Delay Model & "FriisPropagationLossModel" is used for propagation Loss Model. 
 ***
-
-At the left side i.e STAs onnecting to AP0 among 8 STAs 4 are using TcpNewReno as its Socket type in Layer 4 as well as 4 STA are also present at right side which is operating on  TcpNewReno as its Socket type in Layer 4 and rest are using TcpLedbat.
+Note in GNU Plots :
 
 
         # Flow 1, Flow 2, Flow 3 , Flow 4, Flow 5 are TcpLedbat flows
