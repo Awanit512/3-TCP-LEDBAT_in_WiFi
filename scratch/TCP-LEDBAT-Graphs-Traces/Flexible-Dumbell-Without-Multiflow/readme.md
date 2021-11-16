@@ -4,7 +4,7 @@
 
 The arguments feeded to the exampe while running it are following: 
 
-    ./waf --run "scratch/wifi-tcp-ledbat --simulationTime=37 --leftSTAs=5 --rightSTAs=5"
+    ./waf --run "scratch/wifi-tcp-ledbat_flexible_dumbell --simulationTime=37 --leftSTAs=5 --rightSTAs=5"
 
   
   ***
