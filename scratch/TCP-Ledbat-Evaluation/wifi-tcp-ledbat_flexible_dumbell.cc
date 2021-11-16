@@ -1,7 +1,36 @@
 /*
 Author: Awanit Ranjan <awanitranjan.181me214@nitk.edu.in>
 
+* This code example try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
+* All Nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
+* we derive the graph after running the experiment 
+* And graphs depict the flows (Throughput received by STA at each samplePerid (100 ms) ) of the STA at the right side of Dumbell i.e N_r_1 , ...N_r_n' 
+* we have capped the plot generation for maximum 8 STA stations at the right side so that the generated plots does not  flood the base directoy ns3.3x/ in case when 
+* number of STA at the right side of dumbell is high say 30-40. as a result if not capped then around 60-80 files of (.plt and .png) will be genearated 
+* User can simply increse/decrease (modify) this capped value by changing the global variable value MAXOUTFILE to desired value.
+* In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
+* 
+
+* In that case better to run these experiments for ns3.32 (as these experimenst are performed in ns3.32 ) and before running we have to troublshoot this issue in following way:
+  Troubleshooting:
+    CXXFLAGS="-Wall" ./waf configure 
+    ./waf -v
+   
+  Running The Code / Experiment : 
+   ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible__dumbell --simulationTime=28" 
+   
+   
+ If user want to see the required command line argumenst (Assuming, the above troubleshooting has already been performed.):
+ 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/wifi-tcp-ledbat_flexible__dumbell --help" 
+    
+    
+ 
+
+
+
 Flexible  Wireless Dumbell topology 
+
               
 N_l_1- - - - - -                                   - - - - - - - -N_r_1
                  \                                /
@@ -18,22 +47,7 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
         At left side we have n STAs.                      At right side we have n' STAs.
 
 
- * QUICK INSTRUCTIONS:
- *
- * To optimize build:
- * ./waf -d optimized configure
- * ./waf
- *
- * To compile:
- * ./waf --run wifi-multirate
- *
- * To compile with command line(useful for varying parameters):
- * ./waf --run "<this file name> --simulationTime=0.3s --rateAdaptionAlgo=ns3::MinstrelWifiManager"
- *
- * To turn on NS_LOG:
- * export NS_LOG=multirate=level_all
- * (can only view log if built with ./waf -d debug configure)
- *
+ * MORE QUICK INSTRUCTIONS:
  * To debug:
  * ./waf --shell
  * gdb ./build/debug/+ < path to this file from scratch folder>
