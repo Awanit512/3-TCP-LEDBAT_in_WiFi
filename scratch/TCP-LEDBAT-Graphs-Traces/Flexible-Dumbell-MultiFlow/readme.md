@@ -30,6 +30,6 @@ Information Related to Experiments :
 At the left side i.e STAs onnecting to AP0 among 8 STAs 4 are using TcpNewReno as its Socket type in Layer 4 as well as 4 STA are also present at right side which is operating on  TcpNewReno as its Socket type in Layer 4 and rest are using TcpLedbat.
 
 
-        # Flow 1, Flow 2, Flow 3 , Flow 4 are TcpNewReno flows</b>
+        # Flow 1, Flow 2, Flow 3 , Flow 4 are TcpNewReno flows
         
-        # Flow 5, Flow 6, Flow 7 , Flow 8 are TcpLedbat flows</b>
+        # Flow 5, Flow 6, Flow 7 , Flow 8 are TcpLedbat flows
