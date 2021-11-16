@@ -27,7 +27,7 @@ Information Related to Experiments :
   
   > "ConstantSpeedPropagationDelayModel" is used as Propagation Delay Model & "FriisPropagationLossModel" is used for propagation Loss Model. 
 ***
-Note in GNU Plots :
+Note in GNU Plots for 5 flows cooresponding to 5 STA at right side of dumbell:
 
 
         # Flow 1, Flow 2, Flow 3 , Flow 4, Flow 5 are TcpLedbat flows
