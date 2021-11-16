@@ -346,7 +346,7 @@ int main (int argc, char *argv[])
         *outputGnuPlotPtr<< "set xlabel \"X Values\"\n";
         *outputGnuPlotPtr<< "set ylabel \"Y Values\"\n\n";
         *outputGnuPlotPtr<< "set xrange [0:" + std::to_string( (int) simulationTime+10.0 ) + "]\n";
-        *outputGnuPlotPtr<< "set yrange [0:5]\n";
+        *outputGnuPlotPtr<< "set yrange [0:3]\n";
         *outputGnuPlotPtr<<"plot \"-\"  title \"Throughput\" with linespoints\n";
         outfile.push_back(outputGnuPlotPtr);
     }
