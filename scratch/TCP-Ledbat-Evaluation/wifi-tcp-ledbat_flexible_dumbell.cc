@@ -120,66 +120,6 @@ uint64_t  MAXOUTFILE = 8;
  * in case where there are many sta nodes at the right side of dumbell. 
 */
 
-
-
-// wifi-tcp
-
-
-// #include "ns3/tcp-westwood.h"
-
-
-
-//EXAMPES FROM THIRD.CC can also be used  and that from 
-//LBE_Evualation.cc
-
-// Fro wifi-adhoc we get info that how ot go for various rate adaption algorithm
-//How to go for plotting GNU PLOT also setup of ADHOC/INFRASTRUCTURE less MDOE
-//Setting of mobility model--> ConstantPositionMobilityModel 
-//and position allocater --> ListPositionAllcoater
-
-
-
-//  ************************  IMPORTANT  ************************
-
-
-/*
- * This is a simple example to test TCP over 802.11n (with MPDU aggregation enabled).
- *
- * Network topology:
- *
- *   Ap    STA
- *   *      *
- *   |      |
- *   n1     n2
- *
- * In this example, an HT station sends TCP packets to the access point.
- * We report the total throughput received during a window of 100ms.
- * The user can specify the application data rate and choose the variant
- * of TCP i.e. congestion control algorithm to use.
- */
-
-//////////////////////////   ****************        BUt this is lot similar to git repo of LBE_Evaluation.cc *******************
-
-
-
-
-//Till Now we can see only one flow we want some competiting flows 
-
-/////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-//  ******************    TO BE DETERMINED ( TBD )    *****************
-
-// Need to inspect about on - off and PacketSocket part present both in adhoc and ap 
-
-
 std::string 
 GetOutputFileName ()
 {
