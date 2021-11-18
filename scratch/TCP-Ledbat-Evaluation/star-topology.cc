@@ -65,7 +65,18 @@ using namespace ns3;
 
 NS_LOG_COMPONENT_DEFINE ("Evaluation of TCP-LEDBAT For Star Topology");
 
-
+//
+//
+//               n0          n2
+//                 \        /
+//                   \     /
+//                     AP0 
+//                    /    \
+//                  /       \
+//                n1         n3
+//
+//                 Star Topology
+//
 
 std::vector<uint64_t> lastTotalRx;          /* Vector of last total received bytes */
 std::vector<uint64_t> flow;                 /*Vector of all flows to right Dumbell*/
