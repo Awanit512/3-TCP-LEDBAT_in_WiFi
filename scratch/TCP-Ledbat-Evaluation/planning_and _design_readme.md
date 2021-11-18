@@ -65,7 +65,7 @@ The Images for the topology are created by team itself by use of online availabl
     <br />
   </li>
       
-  <li> Wireless dumbell topology  <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/Topology_2.png"> <br />
+  <li> Wireless dumbell topology  <br /> <img src = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/Topology-Images/revised_Topology%20_2.png"> <br />
     <p>This is a Simple Dumbell Topology having 3 STA (which will be configured to have count decided during runtime) connected to a AP and another 3 nodes (which will be configured to have count decided during runtime) at right side  connected to router via P2P link. This topology is inspired from [here.](https://datatracker.ietf.org/doc/html/draft-irtf-iccrg-tcpeval).
     </p>
     <br />
