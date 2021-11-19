@@ -65,7 +65,6 @@ N_l_n- - - - - -                                    - - - - - - - N_r_n'
  * tail -f filename.pcap
 */
 
-
 #include <cmath>
 #include <iostream>
 #include <sstream>
@@ -428,7 +427,8 @@ int main (int argc, char *argv[])
 
 
   /* Setup Physical Layer , Keeping it same for both side dumbell */
-  YansWifiPhyHelper wifiPhy0 = YansWifiPhyHelper::Default ();
+  YansWifiPhyHelper wifiPhy0;
+  //= YansWifiPhyHelper::Default ();
   wifiPhy0.SetChannel (wifiChannel0.Create ());
   if( errorRateModel == "YansErrorRateModel" )
         wifiPhy0.SetErrorRateModel ("ns3::YansErrorRateModel");
@@ -454,7 +454,8 @@ int main (int argc, char *argv[])
 
 
   /* Setup Physical Layer , Keeping it same for both side dumbell */
-  YansWifiPhyHelper wifiPhy1 = YansWifiPhyHelper::Default ();
+  YansWifiPhyHelper wifiPhy1;
+  //= YansWifiPhyHelper::Default ();
   wifiPhy1.SetChannel (wifiChannel1.Create ());
   if( errorRateModel == "YansErrorRateModel" )
         wifiPhy1.SetErrorRateModel ("ns3::YansErrorRateModel");
