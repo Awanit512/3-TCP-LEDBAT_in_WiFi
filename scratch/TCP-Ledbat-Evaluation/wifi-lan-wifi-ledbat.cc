@@ -530,7 +530,7 @@ main (int argc, char *argv[])
   stack.Install (wifiStaNodesLeft);
   stack.Install (wifiStaNodesRight);
 
-//===================================
+
   /* 
    * Here we try to make some of the nodes in left BSS to have TcpSocket Type other than TcpLedbat 
    * in oder to analyze Tcpledbat in competiting flows in wifi environments. 
@@ -580,8 +580,6 @@ main (int argc, char *argv[])
           Config::Set (specificNode, TypeIdValue (tid));
     }
  }
-
-// =========================
 
 
 
@@ -647,7 +645,7 @@ main (int argc, char *argv[])
 
     }
 
-//---------------
+
 
 if(allowFlowFromCsmaNodes)
 {
@@ -670,7 +668,7 @@ if(allowFlowFromCsmaNodes)
 
     }
 }
-//---------------   
+
   sourceAppsNodes.Start (Seconds (0.0));
   sourceAppsNodes.Stop (Seconds (simulationTime));
 
@@ -765,7 +763,7 @@ if(allowFlowFromCsmaNodes)
     for (uint64_t nodeNumber=0; nodeNumber < std::min(MAXOUTFILE ,minimaBetweenLeftAndRightSide); nodeNumber++)
     {
      *outfile[nodeNumber]<<"e\n";  
-     //*outfile[nodeNumber].close();
+
      system(("gnuplot Flow-" + std::to_string(nodeNumber+1) + ".plt").c_str());
     } 
 
@@ -776,9 +774,7 @@ if(allowFlowFromCsmaNodes)
 
     aggregate=aggregate/(double)200 ;
     std::cout<<"aggregate throughput:"<<aggregate<<std::endl;
-    // f0=f0/(double)200;
-    // f1=f1/(double)200;
-    // f2=f2/(double)200;
+
     // std::cout<<"aggregate throughput:"<<aggregate<<"\nFlow0:"<<f0<<"\nFlow1:"<<f1<<"\nFlow2:"<<f2;
 
 
