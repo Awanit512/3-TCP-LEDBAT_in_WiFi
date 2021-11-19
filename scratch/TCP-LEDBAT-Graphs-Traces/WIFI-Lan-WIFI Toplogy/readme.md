@@ -61,7 +61,7 @@ For the Third Scenario :
         
         # Flow 3, Flow 4,  are TcpLedbat flows
         
-        # But This time we dows allow some of the flow from csma Nodes in LAN.    
+        # But This time we does allow some of the flow from csma Nodes in LAN.    
         
         
         
