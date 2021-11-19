@@ -2,6 +2,35 @@
 <h1><i>#3</i> Exhaustive evaluation of TCP LEDBAT in WiFi environments.</h1>
 <h3>Planning & Design Description Doc can be found here : <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evaluation/planning_and%20_design_readme.md"> planning_and_design_readme.md </a> </h3>
 
+<p>
+  Our <b> Exmaple Code and Corresponding GNU Plots </b> are in: <br> 
+ <table>
+   <tbody>
+  <tr> <td> Branch  : <b>`exhaustive_evaluation_ledbat`</b>  </td> </tr>
+   <tr> <td> Directory : <b> scratch directory </b>  </td> </tr>
+  <tr> <td> In the scratch directory we have two more directory </td> </tr>
+   <tr> <td> <b> One of them is  TCP-Ledbat-Evaluation </b> which contains our example code.</td> </tr> 
+   <tr> <td>On the other hand the Second directory   <b> TCP-LEDBAT-Graphs-Traces </b> holds the corresponding GNU plots of individual throughput and Combined Throughput for flows of sink Nodes/STA(stations).</td> </tr> 
+
+   <tr> <td>  
+     Inside TCP-LEDBAT-Graphs-Traces each Toplogy has its own Folder conating plt, png files of GNU plots and some has xml file for animations which can be viewed      using NetAnim Tool. These folder also contains readme.md stating configuration done / command line arguments passed for geenrating such garphs/results.
+     </td> </tr> 
+   </tbody>
+</table>
+</p>
+
+
+***
+  
+  According To the PLanned Task for this Assignment Stated in <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evaluation/planning_and%20_design_readme.md"> `planning_and_design_readme.md` </a>
+
+<p>
+  We have Implemented Example Code for performing Exhaustive Evaluation of TCP LEDBAT in WiFi environments. Thus Corresponding to this the team has come up with 5-6 examples code measuring througput of sink Nodes for different types of flows and in different scenarios example for former includes Tcp Ledbat Flows, TcpNewRenoFlows / or other Tcp Varient and for latter we have simualted the experiment for dfifferent wifi-standard, different rate adaption algorithm, diffrent Error rate Model e.t.c as well tried to write a scalable code thus giving more flexibility to user to pass desired command line arguments for which user wants to experiment the simulation (those arguments can be shown by use of -help flag while running the example).
+</p>
+
+<br>
+
+***
 <table>
 <tr>
   <td><b>Brief:</b></td>
