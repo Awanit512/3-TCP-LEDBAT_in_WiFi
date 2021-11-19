@@ -1,22 +1,16 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
-// ns3 include
-#include "ns3/core-module.h"
+#include<bits/stdc++.h>
 #include "ns3/network-module.h"
 #include "ns3/internet-module.h"
 #include "ns3/wifi-module.h"
 #include "ns3/applications-module.h"
 #include "ns3/mobility-module.h"
-#include "ns3/config-store-module.h"
 #include "ns3/point-to-point-helper.h"
 #include "ns3/ssid.h"
 #include "ns3/yans-wifi-helper.h"
 #include "ns3/yans-wifi-channel.h"
-#include "ns3/on-off-helper.h"
-#include "ns3/packet-socket-helper.h"
-#include "ns3/packet-socket-address.h"
-#include "ns3/packet-socket-helper.h"
 #include "ns3/packet-sink.h"
 #include "ns3/packet-sink-helper.h"
 #include "ns3/internet-stack-helper.h"
@@ -25,16 +19,10 @@
 #include "ns3/point-to-point-helper.h"
 #include "ns3/mobility-helper.h"
 #include "ns3/mobility-model.h"
-#include "ns3/netanim-module.h"
 #include "ns3/core-module.h"
-#include "ns3/network-module.h"
-#include "ns3/internet-module.h"
-#include "ns3/wifi-module.h"
-#include "ns3/applications-module.h"
-#include "ns3/config-store-module.h"
 #include "ns3/command-line.h"
 #include "ns3/gnuplot.h"
-#include "ns3/athstats-helper.h"
+
 
 using namespace ns3;
 
@@ -64,9 +52,28 @@ double aggregate=0,f0=0,f1=0,f2=0;
 Ptr<PacketSink> sink0;
 Ptr<PacketSink> sink1;
 Ptr<PacketSink> sink2;
-std::ofstream outfile0,outfile1,outfile2;
+std::vector< std::ofstream* > gnuPlot;
 
 
+
+void GeneratePLTForFlow(uint64_t flowNum, double simulationTime)
+{
+  std::string fileName = ("Flow"+std::to_string(flowNum) +".plt");
+  std::ofstream* gnuPLotPtr = new std::ofstream("Flow-"+ std::to_string(flowNum+1) + ".plt");
+  std::ostringstream tss;
+  tss << fileName;
+  *gnuPLotPtr<< "set terminal png" <<"\n";
+  *gnuPLotPtr<< "set output \"" << "Flow"+std::to_string(flowNum+1) +".png" <<"\"\n"; 
+  *gnuPLotPtr<< "set title \"" << "Flow-"+std::to_string(flowNum+1) << "\"\n";
+  *gnuPLotPtr<< "set xlabel \"X Values\"\n";
+  *gnuPLotPtr<< "set ylabel \"Y Values\"\n\n";
+  *gnuPLotPtr<< "set xrange [0:"+ std::to_string( (uint64_t) (simulationTime+2.0))+"]\n";
+  *gnuPLotPtr<< "set yrange [0:5]\n";
+  *gnuPLotPtr<<"plot \"-\"  title \"Throughput\" with linespoints\n";
+   gnuPlot.push_back(gnuPLotPtr);
+
+}
+  
 
 void 
 ConfigureWifiStandard ( WifiHelper &wifiHelper , std::string wifiStandard )
@@ -97,9 +104,6 @@ ConfigureWifiStandard ( WifiHelper &wifiHelper , std::string wifiStandard )
         return ;
     }
 }
-
-
-
 
 
 void
@@ -179,12 +183,13 @@ CalculateThroughput ()
   double cur0 = (sink0->GetTotalRx () - lastTotalRx0) * (double) 8 /1e5;
   double cur1 = (sink1->GetTotalRx () - lastTotalRx1) * (double) 8/1e5;
   double cur2 = (sink2->GetTotalRx () - lastTotalRx2) * (double) 8/1e5;
-  outfile0 << now.GetSeconds () << " " << cur0 << std::endl;
-  outfile1 << now.GetSeconds () << " " << cur1 << std::endl;
-  outfile2 << now.GetSeconds () << " " << cur2 << std::endl; 
+
+  *gnuPlot[0] << now.GetSeconds () << " " << cur0 << std::endl;
+  *gnuPlot[1]  << now.GetSeconds () << " " << cur1 << std::endl;
+  *gnuPlot[2]  << now.GetSeconds () << " " << cur2 << std::endl; 
   aggregate+=cur0+cur1+cur2; 
-  f0+=cur0; f1+=cur1; f2+=cur2;   
- // std::cout << now.GetSeconds () << "s: \t" << cur << " Mbit/s" <<std::endl;
+//   f0+=cur0; f1+=cur1; f2+=cur2;   
+ std::cout << now.GetSeconds () << "s: \t" << cur0+cur1+cur2 << " Mbit/s" <<std::endl;
   lastTotalRx0 = sink0->GetTotalRx ();
   lastTotalRx1 = sink1->GetTotalRx ();  
   lastTotalRx2 = sink2->GetTotalRx ();
@@ -198,12 +203,11 @@ main (int argc, char *argv[])
   uint32_t payloadSize = 1472;                       /* Transport layer payload size in bytes. */
   std::string delay  = "2ms";                                               /* delay on central P2P Link. */
   std::string rateAdaptionAlgo = "aarf";                                    /* Rate adaption algorithm or wifi remote station manager to be used*/
-  std::string mobilityModel = "RandomDirection2dMobilityModel";                  /*  Mobility Model to be used for STA's MobilityModel*/
-  std::string errorRateModel = "YansErrorRateModel";                        /* Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel*/
+//   std::string mobilityModel = "RandomDirection2dMobilityModel";                  /*  Mobility Model to be used for STA's MobilityModel*/
+//   std::string errorRateModel = "YansErrorRateModel";                        /* Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel*/
   uint32_t nleft=3;
   uint32_t nright=3;
-  std::string tcp = "lp";
-  std::string wifiStandard = "b";                                           /* Wifi STandard example 802.11b , 802.11a, 802.11n, 802.11ac, 802.11g */
+  std::string wifiStandard = "g";                                           /* Wifi STandard example 802.11b , 802.11a, 802.11n, 802.11ac, 802.11g */
 
   NodeContainer          m_leftDumbellSTANode;            // < Left Dumbell STA node container > 
   NetDeviceContainer     m_leftDumbellDevices;            // < Left Dumbell STA net device container > 
@@ -223,21 +227,26 @@ main (int argc, char *argv[])
   WifiMacHelper wifiMac;
   NodeContainer wifiApNode;
   NetDeviceContainer apDevice;
+
+  Config::SetDefault ("ns3::TcpL4Protocol::SocketType", TypeIdValue (TypeId::LookupByName (std::string ("ns3::") + "TcpLedbat")));
+  Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (payloadSize));
+
+
   
   centrallink.Create(2);
 
   CommandLine cmd;
   cmd.AddValue ("simulationTime", "Simulation time in seconds", simulationTime);
   cmd.AddValue ("Size", "Payload size in bytes", payloadSize);
-  cmd.Parse (argc, argv);
   cmd.AddValue ("rateAdaptionAlgo", "Rate Adaption Algorithm or Wifi remote station manager to be use. [ Please write RAA's acronym and in small letters ex : aarf, arf, onoe, minstreal, ideal or rbar etc..]", rateAdaptionAlgo);
-  cmd.AddValue ("mobilityModel", "Mobility Model to be used for STAs", mobilityModel);
-  cmd.AddValue ("errorRateModel", "Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel", errorRateModel);
+//   cmd.AddValue ("mobilityModel", "Mobility Model to be used for STAs", mobilityModel);
+//   cmd.AddValue ("errorRateModel", "Error Rate Model To be used like YansErrorRateModel NISTErrorRateModel", errorRateModel);
   cmd.AddValue ("wifiStandard", "Wifi STandard enter just extension [ ex : b,a,g,n,ac]" , wifiStandard);
   cmd.AddValue ("delay", "delay on central P2P Link", delay);
+  cmd.Parse (argc, argv);
 
 
- m_leftDumbellSTANode.Create (nleft);
+  m_leftDumbellSTANode.Create (nleft);
   m_rightDumbellSTANode.Create (nright);
 
   PointToPointHelper rightHelper,centrallinkHelper,distributionSystemHelper;
@@ -255,9 +264,7 @@ main (int argc, char *argv[])
   wifiPhy.SetChannel (wifiChannel.Create ());
   
   Ssid ssid = Ssid ("WTLedbat-EE-FD0");
-  wifi.SetStandard (WIFI_PHY_STANDARD_80211g);
-  wifi.SetRemoteStationManager ("ns3::AarfWifiManager");
-  
+
 
   ConfigureWifiStandard ( wifi , wifiStandard );
   ConfigureRemoteStationManager ( wifi, rateAdaptionAlgo );
@@ -300,14 +307,12 @@ main (int argc, char *argv[])
       m_rightRouterDevices.Add (c.Get (0));
       m_rightDumbellDevices.Add (c.Get (1));
     }  
-  //Config::SetDefault ("ns3::TcpL4Protocol::SocketType", TypeIdValue (TcpNewReno::GetTypeId ()));
-   Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (payloadSize));
 
   InternetStackHelper stack;
   stack.Install (centrallink);
   stack.Install (m_leftDumbellSTANode);
   stack.Install (m_rightDumbellSTANode);
-  Config::Set ("$ns3::NodeListPriv/NodeList/2/$ns3::TcpL4Protocol/SocketType", TypeIdValue (TcpVegas::GetTypeId ()));
+
 
  
   //Assigns IPAddress
@@ -375,73 +380,23 @@ main (int argc, char *argv[])
   sinkApps.Stop (Seconds (20.0));
 
   
-  std::ostringstream tss;
-  tss << "Flow0.plt";
+ for(uint64_t i=0;i<nright;i++)
+   GeneratePLTForFlow(i,simulationTime);
 
- 
-  outfile0.open (tss.str().c_str(), std::ofstream::out);
-
-  outfile0<< "set terminal png" <<"\n";
-  outfile0<< "set output \"" << "Flow0.png" <<"\"\n"; 
-  outfile0<< "set title \"" << "Flow0" << "\"\n";
-  outfile0<< "set xlabel \"X Values\"\n";
-  outfile0<< "set ylabel \"Y Values\"\n\n";
-  outfile0<< "set xrange [0:20]\n";
-  outfile0<< "set yrange [0:10]\n";
-  outfile0<<"plot \"-\"  title \"Throughput\" with linespoints\n";
-  std::ostringstream tss1;
-  tss1 << "Flow1.plt";
-
- 
-  outfile1.open (tss1.str().c_str(), std::ofstream::out);
-
-  outfile1<< "set terminal png" <<"\n";
-  outfile1<< "set output \"" << "Flow1.png" <<"\"\n"; 
-  outfile1<< "set title \"" << "Flow1" << "\"\n";
-  outfile1<< "set xlabel \"X Values\"\n";
-  outfile1<< "set ylabel \"Y Values\"\n\n";
-  outfile1<< "set xrange [0:20]\n";
-  outfile1<< "set yrange [0:10]\n";
-  outfile1<<"plot \"-\"  title \"Throughput\" with linespoints\n";
-
-  std::ostringstream tss2;
-  tss2 << "Flow2.plt";
-
- 
-  outfile2.open (tss2.str().c_str(), std::ofstream::out);
-
-  outfile2<< "set terminal png" <<"\n";
-  outfile2<< "set output \"" << "Flow2.png" <<"\"\n"; 
-  outfile2<< "set title \"" << "Flow2" << "\"\n";
-  outfile2<< "set xlabel \"X Values\"\n";
-  outfile2<< "set ylabel \"Y Values\"\n\n";
-  outfile2<< "set xrange [0:20]\n";
-  outfile2<< "set yrange [0:10]\n";
-  outfile2<<"plot \"-\"  title \"Throughput\" with linespoints\n";
-
-
-
-  
   Simulator::Schedule (Seconds (0), &CalculateThroughput);
   NS_LOG_INFO ("Run Simulation.");
   
   Simulator::Stop(Seconds(simulationTime));
   Simulator::Run ();
   Simulator::Destroy ();
-  outfile0 <<"e\n";
-  outfile0.close ();
-  outfile1 <<"e\n";
-  outfile1.close ();
-  outfile2 <<"e\n";
-  outfile2.close ();
-  system("gnuplot Flow0.plt");
-  system("gnuplot Flow1.plt");
-  system("gnuplot Flow2.plt");
-  aggregate=aggregate/(double)200 ;
-  f0=f0/(double)200;
-  f1=f1/(double)200;
-  f2=f2/(double)200;
-  std::cout<<"aggregate throughput:"<<aggregate<<"\nFlow0:"<<f0<<"\nFlow1:"<<f1<<"\nFlow2:"<<f2;
+
+   for (uint64_t nodeNumber=0; nodeNumber < nright; nodeNumber++)
+    {
+     *gnuPlot[nodeNumber]<<"e\n";  
+     system(("gnuplot Flow-" + std::to_string(nodeNumber+1) + ".plt").c_str());
+    } 
+
+  std::cout<<"Aggregate throughput: for All " << nright << " Flows : "<< aggregate/(double)200 <<std::endl;
   return 0;
 }
  
