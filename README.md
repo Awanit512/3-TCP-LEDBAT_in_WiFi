@@ -22,7 +22,7 @@
 
 ***
   
-  According To the PLanned Task for this Assignment Stated in <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evaluation/planning_and%20_design_readme.md"> `planning_and_design_readme.md` </a>
+  According To the planned Task for this Assignment Stated in <a href = "https://github.com/Awanit512/3-TCP-LEDBAT_in_WiFi/blob/exhaustive_evaluation_ledbat/scratch/TCP-Ledbat-Evaluation/planning_and%20_design_readme.md"> `planning_and_design_readme.md` </a>
 
 <p>
   We have Implemented Example Code for performing Exhaustive Evaluation of TCP LEDBAT in WiFi environments. Thus Corresponding to this the team has come up with 5-6 examples code measuring througput of sink Nodes for different types of flows and in different scenarios example for former includes Tcp Ledbat Flows, TcpNewRenoFlows / or other Tcp Varient and for latter we have simualted the experiment for dfifferent wifi-standard, different rate adaption algorithm, diffrent Error rate Model e.t.c as well tried to write a scalable code thus giving more flexibility to user to pass desired command line arguments for which user wants to experiment the simulation (those arguments can be shown by use of -help flag while running the example).
@@ -31,6 +31,8 @@
 <br>
 
 ***
+
+<p> Below shows a brief view Of Ledbat ALgorithm which is kept it for reference. </p>
 <table>
 <tr>
   <td><b>Brief:</b></td>
