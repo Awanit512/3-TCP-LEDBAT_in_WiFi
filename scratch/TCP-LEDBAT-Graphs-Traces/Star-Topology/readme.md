@@ -42,7 +42,7 @@ Information Related to Experiments :
     ./waf -v
  
  
-*Running The Code / Experiment for say 28 seconds and for 8 STA at both sides of dumbell : 
+*Running The Code / Experiment for say 28 seconds: 
 
     ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=2 --rightSTAs=2" 
    
