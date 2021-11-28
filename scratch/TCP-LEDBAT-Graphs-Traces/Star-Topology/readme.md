@@ -1,4 +1,4 @@
-# This folder contains all the relevent gnu plt trace files along with correspoding graphs of throghput flows against time (thses throughput are taken with samplePeriod of 100 ms).
+# This folder contains all the relevent gnu plt trace files along with correspoding graphs of throghput flows against time (the throughput are taken with samplePeriod of 100 ms).
 
 ## Author : Yerramaddu Jahnavi (181CO260)
 
