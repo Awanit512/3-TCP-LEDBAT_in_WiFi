@@ -12,8 +12,8 @@ The arguments feeded to the exampe while running it are following:
 Information Related to Experiments :
 
   > Experiment is ran for simulationTime = 28 seconds.
- 
-  > There are 3 nodes on each dumbell
+  
+  > There are 3 nodes on each BSS.
 
   > 802.11b is used as the WIFI STANDARD for the experiment ( which is the default ).
 
@@ -26,7 +26,7 @@ Information Related to Experiments :
   NOTE :
   
   * This example consist of traigular(3 BSS ) and each having three nodes(STA) though the implementor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively).
-  *  This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implementor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology. This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implementor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology. This example consist of traigular( 3 BSS ) and each having three nodes(STA) though the implementor will extend this example to x, y, z (3, 3, 3 for all three BSS by default) for BSS0, BSS1 and BSS2 respectively), and the number of nodes's value will be passed by user during run-time. A similar idea as that of flexible dumbell topology. A similar idea as that of flexible dumbell topology. 
+  *  A similar idea as that of flexible dumbell topology. 
   
   
 * In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
@@ -37,7 +37,7 @@ Troubleshooting:
     CXXFLAGS="-Wall" ./waf configure 
     ./waf -v
    
-*Running The Code / Experiment for say 28 seconds and for 5 STA at both sides of dumbell : 
+*Running The Code / Experiment for say 28 seconds: 
 
     ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-triangular-topology --simulationTime=28" 
    
