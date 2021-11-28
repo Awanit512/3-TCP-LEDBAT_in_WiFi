@@ -12,7 +12,7 @@ Information Related to Experiments :
 
   > Experiment is ran for simulationTime = 20 seconds.
  
-  > There are 8 nodes at both right and left side of simple dumbell (--leftSTAs=8 --rightSTAs=8).
+  > There are 3 nodes at both right and left side of simple dumbell (--leftSTAs=3 --rightSTAs=3 which is default).
 
   > 802.11b is used as the WIFI STANDARD for the experiment ( which is the default ).
 
