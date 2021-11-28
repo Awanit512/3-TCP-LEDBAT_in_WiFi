@@ -30,6 +30,10 @@ using namespace ns3;
 
 /*
 
+
+Author - Keerti Chaudhary 
+
+
 Simple Wireless Dumbell topology 
 N_l_1- - - - - -                                   - - - - - - - -N_r_1
                  \                                /
