@@ -44,7 +44,7 @@ Information Related to Experiments :
  
 *Running The Code / Experiment for say 28 seconds and for 8 STA at both sides of dumbell : 
 
-    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=8 --rightSTAs=8" 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=2 --rightSTAs=2" 
    
    
 *If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
