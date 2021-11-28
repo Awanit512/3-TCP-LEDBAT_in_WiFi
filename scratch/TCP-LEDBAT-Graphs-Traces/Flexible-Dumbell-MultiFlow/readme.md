@@ -1,4 +1,4 @@
-# This folder contains all the relevent gnu plt trace files along with correspoding graphs of throghput flows against time (thses throughput are taken with samplePeriod of 100 ms) [some files are bigger in size ex: pcap so they are not uploaded].
+# This folder contains all the relevent gnu plt trace files along with correspoding graphs of throghput flows against time (the throughput are taken with samplePeriod of 100 ms) [some files are bigger in size ex: pcap so they are not uploaded].
 
 ## Author : Awanit Ranjan (181CO161)
 
