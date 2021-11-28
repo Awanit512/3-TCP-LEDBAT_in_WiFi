@@ -1,6 +1,6 @@
 /*
 STAR TOPOLOGY
-AUTHOR : Author - Yerramaddu Jahnavi
+ Author - Yerramaddu Jahnavi
 */
 
 
