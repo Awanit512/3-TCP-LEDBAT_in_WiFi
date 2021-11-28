@@ -167,6 +167,14 @@ ConfigureRemoteStationManager (WifiHelper &wifiHelper, std::string rateAdaptionA
     } 
 }
 
+uint64_t 
+extractMIN( uint32_t leftSTAs ,uint32_t rightSTAs, uint32_t centerSTAs )
+{
+  uint32_t minimaLeftRight = std::min(leftSTAs, rightSTAs);
+  uint32_t minimumValue = std::min(minimaLeftRight, centerSTAs );
+  return (uint64_t) minimumValue;
+}
+
 void
 ThroughputCalculation (double samplingPeriod, uint64_t minimaBetweenLeftAndRightSide)
 {
@@ -282,7 +290,7 @@ int main (int argc, char *argv[])
   cmd.AddValue ("wifiStandard", "Wifi STandard enter just extension [ ex : b,a,g,n,ac]" , wifiStandard);
   cmd.Parse (argc, argv);
 
-  uint64_t minima = std::min(leftSTAs ,rightSTAs, centerSTAs ); /*minima value between left,right and center of no of stas*/ 
+  uint64_t minima = extractMIN(leftSTAs ,rightSTAs, centerSTAs ); /*minima value between left,right and center of no of stas*/ 
   for (uint64_t nodeNumber=0 ; nodeNumber < std::min(MAXOUTFILE, minima) ; nodeNumber++)
     { 
         lastTotalRx.push_back(0.0);
@@ -331,7 +339,7 @@ int main (int argc, char *argv[])
   NodeContainer wifiApNode1;
   NetDeviceContainer wifiApDevice1;
   NodeContainer wifiApNode2;
-  NodeContainer wifiApDevice2;
+  NetDeviceContainer wifiApDevice2;
 
   // Create the required three access points i.e AP0, AP1 and AP2.
   m_accessPoints.Create(3);  
@@ -442,7 +450,7 @@ int main (int argc, char *argv[])
   Ssid ssid2 = Ssid ("WTLedbat-EE-FD2");  //wifi tcp ledbat exhaustive evaluation on dumbell BSS2
 
   ConfigureWifiStandard ( wifi , wifiStandard );
- ConfigureRemoteStationManager ( wifi, rateAdaptionAlgo );
+  ConfigureRemoteStationManager ( wifi, rateAdaptionAlgo );
 
 
   // setup stas for Left Dumbell .
@@ -805,7 +813,7 @@ int main (int argc, char *argv[])
     }
 
 
-  AnimationInterface anim ("flexible-dumbell-animation.xml");
+  AnimationInterface anim ("Triangular-Topology-animation.xml");
     // position =  // configure the position example anim.SetConstantPosition(nodes.Get(0), 1.0, 2.0);
     // anim.SetConstantPosition(nodes.Get(0), position);
     // anim.SetConstantPosition(nodes.Get(1), position)
