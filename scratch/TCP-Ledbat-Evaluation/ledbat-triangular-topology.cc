@@ -1,3 +1,11 @@
+/*
+
+ Author - Yerramaddu Jahnavi
+ 
+Triangular Topology.
+*/
+
+
 #include <cmath>
 #include <iostream>
 #include <sstream>
