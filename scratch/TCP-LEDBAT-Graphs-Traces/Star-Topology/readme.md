@@ -4,7 +4,7 @@
 
 The arguments feeded to the exampe while running it are following: 
 
-    ./waf --run "scratch/wifi-tcp-ledbat-multiflow --simulationTime=28 --leftSTAs=2 --rightSTAs=2 --pcapTracing=true"
+    ./waf --run "scratch/ledbat-star-topology --simulationTime=28 --leftSTAs=2 --rightSTAs=2 --pcapTracing=true"
   
   ***
   
@@ -44,10 +44,10 @@ Information Related to Experiments :
  
 *Running The Code / Experiment for say 28 seconds: 
 
-    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=2 --rightSTAs=2" 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-star-topology  --simulationTime=28 --leftSTAs=2 --rightSTAs=2" 
    
    
 *If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
  
-    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --help" 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-star-topology  --help" 
     
