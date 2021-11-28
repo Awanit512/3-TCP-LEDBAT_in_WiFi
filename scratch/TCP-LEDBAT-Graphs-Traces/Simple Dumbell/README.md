@@ -31,7 +31,7 @@ NOTE :
 
 
 
-* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow` try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
+* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-simple-dumbell-topology` try to evaluates TCp Ledbat performance under wireless conditions . Here in this code we have make Two BSS attched via P2P links.
 * This example code is differnet from the above stated code in the way tht it support multiflow i.e as in former all nodes is enabled with TcpLedbat as its Socket Type in Layer 4 .
 * Thus throug this example we can analyze the TcpLedbat Performance in presence of a competitive flow in wifi environmenst.
 * We had derived the graph after running the experiment 
