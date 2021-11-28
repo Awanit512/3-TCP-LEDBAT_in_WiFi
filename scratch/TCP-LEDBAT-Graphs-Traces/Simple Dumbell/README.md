@@ -4,7 +4,7 @@
 
 The arguments feeded to the exampe while running it are following: 
 
-    ./waf --run "scratch/wifi-tcp-ledbat-multiflow --simulationTime=20 --leftSTAs=8 --rightSTAs=8 
+    ./waf --run "scratch/ledbat-simple-dumbell-topology --simulationTime=20" 
   
   ***
   
