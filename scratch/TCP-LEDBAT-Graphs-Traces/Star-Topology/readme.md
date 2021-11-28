@@ -26,3 +26,28 @@ Information Related to Experiments :
   
   > "ConstantSpeedPropagationDelayModel" is used as Propagation Delay Model & "FriisPropagationLossModel" is used for propagation Loss Model. 
 ***
+
+* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-star-topology` try to evaluates TCp Ledbat performance under wireless conditions.
+
+* In this example we will try to consider a star topology forming a BSS i.e at center we will be having AP and outside nodes as STA. We will use a mobility model as required by simulator for calculating received signal. 
+
+* In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
+
+
+* In that case better to run these experiments for ns3.32 (as these experimenst are performed in ns3.32 ) and before running we have to troublshoot this issue in following way:
+
+*Troubleshooting:
+
+    CXXFLAGS="-Wall" ./waf configure 
+    ./waf -v
+ 
+ 
+*Running The Code / Experiment for say 28 seconds and for 8 STA at both sides of dumbell : 
+
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --simulationTime=28 --leftSTAs=8 --rightSTAs=8" 
+   
+   
+*If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
+ 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-flexible-dumbell-multiflow --help" 
+    
