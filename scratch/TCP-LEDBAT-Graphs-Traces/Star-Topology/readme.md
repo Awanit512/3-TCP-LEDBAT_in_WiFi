@@ -4,7 +4,7 @@
 
 The arguments feeded to the exampe while running it are following: 
 
-    ./waf --run "scratch/ledbat-star-topology --simulationTime=28 --leftSTAs=2 --rightSTAs=2 --pcapTracing=true"
+    ./waf --run "scratch/ledbat-star-topology --simulationTime=28 --pcapTracing=true"
   
   ***
   
@@ -14,7 +14,7 @@ Information Related to Experiments :
   
   > We have made pcap tracing to be true  ( --pcapTracing=true ).
  
-  > There are 2 nodes at both right and left side (--leftSTAs=2 --rightSTAs=2).
+  > There are 2 nodes at both right and left side .
 
   > TcpNewReno is used as Tcp Varient against Tcp Ledbat.
 
@@ -27,9 +27,11 @@ Information Related to Experiments :
   > "ConstantSpeedPropagationDelayModel" is used as Propagation Delay Model & "FriisPropagationLossModel" is used for propagation Loss Model. 
 ***
 
-* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-star-topology` try to evaluates TCp Ledbat performance under wireless conditions.
+* The Corresponding code example `scratch/TCP-Ledbat-Evaluation/ledbat-star-topology` try to evaluates TCP Ledbat performance under wireless conditions.
 
-* In this example we will try to consider a star topology forming a BSS i.e at center we will be having AP and outside nodes as STA. We will use a mobility model as required by simulator for calculating received signal. 
+* In this example we will try to consider a star topology forming a BSS i.e at center we will be having AP and outside nodes as STA. 
+
+* We will use a mobility model as required by simulator for calculating received signal. 
 
 * In some version of ns3.3x example ns3.35 running the code might throw error which are actually warnings but compiler trated those as as error
 
@@ -44,7 +46,7 @@ Information Related to Experiments :
  
 *Running The Code / Experiment for say 28 seconds: 
 
-    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-star-topology  --simulationTime=28 --leftSTAs=2 --rightSTAs=2" 
+    ./waf --run "scratch/TCP-Ledbat-Evaluation/ledbat-star-topology  --simulationTime=28" 
    
    
 *If user want to see the required command line arguments (Assuming, the above troubleshooting has already been performed.):
